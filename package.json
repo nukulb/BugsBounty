@@ -1,0 +1,25 @@
+{
+  "name": "BugsBounty",
+  "version": "0.0.1",
+  "description": "Freedom to build anything we want",
+  "author": {
+    "name": "Nukul Rowell Jason"
+  },
+  "main": "index",
+  "dependencies": {
+    "connect": "1.7.x",
+    "express": "2.5.0",
+    "jasmine-node": "1.0.7"
+  },
+  "bundledDependencies": [
+    "connect",
+    "argsparser"
+  ],
+ "files": [
+    "node_modules",
+    "README.md",
+    "LICENSE",
+    "lib",
+    "bin"
+  ]
+}
