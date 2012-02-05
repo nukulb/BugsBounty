@@ -40,6 +40,6 @@ app.configure(function(){
     app.use(express.static(__dirname + '/public'));
 });
 
-app.listen('3000');
-console.log('Server running at http://127.0.0.1:3000/');
+app.listen('80');
+console.log('Server running at http://127.0.0.1:80/');
 
