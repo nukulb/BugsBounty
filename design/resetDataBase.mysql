@@ -1,0 +1,158 @@
+
+
+
+
+-- ---
+-- Globals
+-- ---
+
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
+
+-- ---
+-- Table 'USER'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `USER`;
+		
+CREATE TABLE `USER` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` VARCHAR(255) NULL DEFAULT NULL,
+  `phone` VARCHAR(255) NULL DEFAULT NULL,
+  `city` VARCHAR(255) NULL DEFAULT NULL,
+  `state` VARCHAR(255) NULL DEFAULT NULL,
+  `country` VARCHAR(255) NULL DEFAULT NULL,
+  `user_id` VARCHAR(255) NULL DEFAULT NULL,
+  `password` VARCHAR(255) NULL DEFAULT NULL,
+  `dev_id` INTEGER NULL DEFAULT NULL,
+  `tester_id` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'TESTER'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `TESTER`;
+		
+CREATE TABLE `TESTER` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'DEVELOPER'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `DEVELOPER`;
+		
+CREATE TABLE `DEVELOPER` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'APP'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `APP`;
+		
+CREATE TABLE `APP` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `dev_id` INTEGER NULL DEFAULT NULL,
+  `name` VARCHAR(255) NULL DEFAULT NULL,
+  `icon` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'DEVICE'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `DEVICE`;
+		
+CREATE TABLE `DEVICE` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `MAKER` VARCHAR(255) NULL DEFAULT NULL,
+  `MODEL` VARCHAR(255) NULL DEFAULT NULL,
+  `VERSION` VARCHAR(255) NULL DEFAULT NULL,
+  `OS` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'TESTER_APP_LOOKUP'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `TESTER_APP_LOOKUP`;
+		
+CREATE TABLE `TESTER_APP_LOOKUP` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `app_id` INTEGER NULL DEFAULT NULL,
+  `tester_id` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'device_app_lookup'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `device_app_lookup`;
+		
+CREATE TABLE `device_app_lookup` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `device_id` INTEGER NULL DEFAULT NULL,
+  `app_id` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Foreign Keys 
+-- ---
+
+ALTER TABLE `USER` ADD FOREIGN KEY (dev_id) REFERENCES `DEVELOPER` (`id`);
+ALTER TABLE `USER` ADD FOREIGN KEY (tester_id) REFERENCES `TESTER` (`id`);
+ALTER TABLE `APP` ADD FOREIGN KEY (dev_id) REFERENCES `DEVELOPER` (`id`);
+ALTER TABLE `TESTER_APP_LOOKUP` ADD FOREIGN KEY (app_id) REFERENCES `APP` (`id`);
+ALTER TABLE `TESTER_APP_LOOKUP` ADD FOREIGN KEY (tester_id) REFERENCES `TESTER` (`id`);
+ALTER TABLE `device_app_lookup` ADD FOREIGN KEY (device_id) REFERENCES `DEVICE` (`id`);
+ALTER TABLE `device_app_lookup` ADD FOREIGN KEY (app_id) REFERENCES `APP` (`id`);
+
+-- ---
+-- Table Properties
+-- ---
+
+-- ALTER TABLE `USER` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `TESTER` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `DEVELOPER` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `APP` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `DEVICE` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `TESTER_APP_LOOKUP` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `device_app_lookup` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ---
+-- Test Data
+-- ---
+
+-- INSERT INTO `USER` (`id`,`name`,`phone`,`city`,`state`,`country`,`user_id`,`password`,`dev_id`,`tester_id`) VALUES
+-- ('','','','','','','','','','');
+-- INSERT INTO `TESTER` (`id`) VALUES
+-- ('');
+-- INSERT INTO `DEVELOPER` (`id`) VALUES
+-- ('');
+-- INSERT INTO `APP` (`id`,`dev_id`,`name`,`icon`) VALUES
+-- ('','','','');
+-- INSERT INTO `DEVICE` (`id`,`MAKER`,`MODEL`,`VERSION`,`OS`) VALUES
+-- ('','','','','');
+-- INSERT INTO `TESTER_APP_LOOKUP` (`id`,`app_id`,`tester_id`) VALUES
+-- ('','','');
+-- INSERT INTO `device_app_lookup` (`id`,`device_id`,`app_id`) VALUES
+-- ('','','');
+

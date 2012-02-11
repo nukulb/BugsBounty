@@ -2,8 +2,9 @@ var mysql = require('mysql');
 var DEV_DATA = 'DEV_DATA';
 var TESTER_TABLE = 'testers';
 var client = mysql.createClient({
-  user: 'root',
-  password: 'root',
+  user: 'nukul',
+  password: 'Whatdoyoumean8',
+  host: 'bugsbounty.com'
 });
 
 client.query('CREATE DATABASE '+DEV_DATA, function(err) {

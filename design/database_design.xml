@@ -9,194 +9,131 @@
             <type label="Single precision" length="0" sql="FLOAT" quote=""/>
             <type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
         </group>
-
+        
         <group label="Character" color="rgb(255,200,200)">
             <type label="Char" length="1" sql="CHAR" quote="'"/>
             <type label="Varchar" length="1" sql="VARCHAR" quote="'"/>
-            <type label="Text" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'"/>
-            <type label="Binary" length="1" sql="BINARY" quote="'"/>
-            <type label="Varbinary" length="1" sql="VARBINARY" quote="'"/>
-            <type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'"/>
-        </group>
-
-        <group label="Date &amp; Time" color="rgb(200,255,200)">
-            <type label="Date" length="0" sql="DATE" quote="'"/>
-            <type label="Time" length="0" sql="TIME" quote="'"/>
-            <type label="Datetime" length="0" sql="DATETIME" quote="'"/>
-            <type label="Year" length="0" sql="YEAR" quote=""/>
-            <type label="Timestamp" length="0" sql="TIMESTAMP" quote="'"/>
-        </group>
-
-        <group label="Miscellaneous" color="rgb(200,200,255)">
-            <type label="ENUM" length="1" sql="ENUM" quote=""/>
-            <type label="SET" length="1" sql="SET" quote=""/>
-            <type label="Bit" length="0" sql="bit" quote=""/>
-        </group>
-        </datatypes><table x="269" y="148" name="Tester">
-<row name="testerId" null="1" autoincrement="1">
+            <type label="Text" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'"/></group></datatypes><table x="274" y="284" name="USER">
+<row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>testerId</part>
-</key>
-</table>
-<table x="103" y="149" name="User">
-<row name="userId" null="1" autoincrement="1">
-<datatype>VARCHAR</datatype>
+<row name="name" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="phone" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="city" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="state" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="country" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="user_id" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
 <row name="password" null="1" autoincrement="0">
 <datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
-<row name="testerId" null="1" autoincrement="0">
+<row name="dev_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Tester" row="testerId" />
+<default>NULL</default><relation table="DEVELOPER" row="id" />
 </row>
-<row name="devId" null="1" autoincrement="0">
+<row name="tester_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Developer" row="devId" />
+<default>NULL</default><relation table="TESTER" row="id" />
 </row>
 <key type="PRIMARY" name="">
-<part>userId</part>
+<part>id</part>
 </key>
 </table>
-<table x="284" y="321" name="Developer">
-<row name="devId" null="1" autoincrement="1">
+<table x="676" y="193" name="TESTER">
+<row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="devGroupId" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="DevGroup" row="devGroupId" />
-</row>
 <key type="PRIMARY" name="">
-<part>devId</part>
+<part>id</part>
 </key>
 </table>
-<table x="94" y="290" name="UserInfo">
-<row name="userId" null="1" autoincrement="1">
-<datatype>VARCHAR</datatype>
-<default>NULL</default><relation table="User" row="userId" />
-</row>
-<row name="firstName" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="lastName" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="email" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="phone" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<table x="661" y="491" name="DEVELOPER">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>userId</part>
+<part>id</part>
 </key>
 </table>
-<table x="473" y="343" name="DevGroup">
-<row name="devGroupId" null="1" autoincrement="1">
+<table x="1353" y="273" name="APP">
+<row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="devGroupName" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<row name="dev_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="DEVELOPER" row="id" />
+</row>
+<row name="name" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="icon" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>devGroupId</part>
+<part>id</part>
 </key>
 </table>
-<table x="472" y="417" name="DevGroupInfo">
-<row name="devGroupId" null="1" autoincrement="1">
+<table x="1353" y="693" name="DEVICE">
+<row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="DevGroup" row="devGroupId" />
-</row>
-<row name="email" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="phone" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<row name="MAKER" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
-<row name="created" null="1" autoincrement="0">
-<datatype>DATETIME</datatype>
+<row name="MODEL" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="VERSION" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="OS" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>devGroupId</part>
+<part>id</part>
 </key>
 </table>
-<table x="664" y="312" name="Application">
-<row name="appId" null="1" autoincrement="1">
+<table x="950" y="79" name="TESTER_APP_LOOKUP">
+<row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="appName" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="devGroupId" null="1" autoincrement="0">
+<row name="app_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="DevGroup" row="devGroupId" />
+<default>NULL</default><relation table="APP" row="id" />
 </row>
-<row name="platformId" null="1" autoincrement="0">
+<row name="tester_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Platform" row="platformId" />
+<default>NULL</default><relation table="TESTER" row="id" />
 </row>
 <key type="PRIMARY" name="">
-<part>appId</part>
+<part>id</part>
 </key>
 </table>
-<table x="924" y="312" name="Platform">
-<row name="platformId" null="1" autoincrement="1">
+<table x="1524" y="490" name="device_app_lookup">
+<row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="platformName" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="minVersion" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="maxVersion" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>platformId</part>
-</key>
-</table>
-<table x="899" y="159" name="TesterPlatforms">
-<row name="testerId" null="1" autoincrement="0">
+<row name="device_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Tester" row="testerId" />
+<default>NULL</default><relation table="DEVICE" row="id" />
 </row>
-<row name="platformId" null="1" autoincrement="0">
+<row name="app_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Platform" row="platformId" />
+<default>NULL</default><relation table="APP" row="id" />
 </row>
 <key type="PRIMARY" name="">
-<part>testerId</part>
+<part>id</part>
 </key>
-<comment>Nonunique ID</comment>
-</table>
-<table x="663" y="210" name="AppTesters">
-<row name="testerId" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Tester" row="testerId" />
-</row>
-<row name="appId" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Application" row="appId" />
-</row>
-<key type="PRIMARY" name="">
-<part>testerId</part>
-</key>
-<comment>Nonunique ID</comment>
-</table>
-<table x="465" y="71" name="TesterGroup">
-<row name="testerGroupId" null="0" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>'NULL'</default></row>
-<row name="testerId" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Tester" row="testerId" />
-</row>
-<key type="PRIMARY" name="">
-<part>testerGroupId</part>
-</key>
-<comment>Nonunique ID</comment>
 </table>
 </sql>
-
