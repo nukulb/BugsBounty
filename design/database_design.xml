@@ -136,4 +136,20 @@
 <part>id</part>
 </key>
 </table>
+<table x="992" y="570" name="TESTER_DEVICE_LOOKUP">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="TESTER_ID" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="TESTER" row="id" />
+</row>
+<row name="DEVICE_ID" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="DEVICE" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
 </sql>

@@ -10,7 +10,9 @@
     "connect": "1.7.x",
     "express": "2.5.0",
     "jasmine-node": "1.0.7",
-    "mysql": "*"
+    "mysql": "*",
+    "validator": "*"
+
   },
   "bundledDependencies": [
     "connect",
