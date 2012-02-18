@@ -1,7 +1,9 @@
 //creating a server with express.
 var express = require('express'),
     app = express.createServer(),
-    expressValidator = require('express-validator');
+    expressValidator = require('express-validator'),
+    database = require('./lib/database');
+
 //setup a static server, make sure configure happens before you call req.body
 app.configure(function(){
     //app.use(express.methodOverride());
@@ -10,18 +12,6 @@ app.configure(function(){
     //this is all you have to setup a static server, the public folder is now exposed.
     app.use(express.static(__dirname + '/public'));
 });
-
-/*********/
-var mysql = require('mysql');
-var DEV_DATA = 'DEV_DATA';
-var client = mysql.createClient({
-  user: 'nukul',
-  password: 'Whatdoyoumean8',
-  host: 'bugsbounty.com'
-});
-client.query('USE '+DEV_DATA);
-/********/
-
 
 app.get("/user/:id", function (req,res, next){
     //lookup in database and send the :id back
@@ -55,7 +45,7 @@ app.post("/lp/user/add", function (req,res,next){
         return;
     }
     
-    client.query(
+    database.query(
         'INSERT INTO lp_user '+
             'SET name = ?, email = ?',
             [ req.param('name'), req.param('email') ]
@@ -70,4 +60,5 @@ app.post("/", function (req,res,next){
 
 app.listen('3000');
 console.log('Server running at http://127.0.0.1:3000/');
+module.export = app;
 

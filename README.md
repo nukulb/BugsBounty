@@ -1,9 +1,15 @@
 Run ./configure 
 or if you know what you are doing you can just run "npm install". ./configure is necessary the first time.
 
-#Setting up the database MySQL
+##Setting up the database MySQL
+This is done to determine if you are running node in production or development environment.
+On the development environment add this line at the end of your .bash_profile.
+export BUGS_BOUNTY_DATABASE="DEV_DATA"
 
-##MAC
+On the production environment add this line at the end of your .bash_profile.
+export BUGS_BOUNTY_DATABASE="PROD_DATA"
+
+###MAC
 1. To run a local database I simply downloaded and isntalled MySQL from this link
 http://dev.mysql.com/downloads/mysql/
 
