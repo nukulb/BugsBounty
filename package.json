@@ -11,8 +11,7 @@
     "express": "2.5.0",
     "jasmine-node": "1.0.7",
     "mysql": "*",
-    "validator": "*"
-
+    "express-validator": "*"
   },
   "bundledDependencies": [
     "connect",

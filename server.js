@@ -1,6 +1,26 @@
 //creating a server with express.
-var express = require('express');
-var app = express.createServer();
+var express = require('express'),
+    app = express.createServer(),
+    expressValidator = require('express-validator');
+//setup a static server, make sure configure happens before you call req.body
+app.configure(function(){
+    //app.use(express.methodOverride());
+    app.use(express.bodyParser());
+    app.use(expressValidator);
+    //this is all you have to setup a static server, the public folder is now exposed.
+    app.use(express.static(__dirname + '/public'));
+});
+
+/*********/
+var mysql = require('mysql');
+var DEV_DATA = 'DEV_DATA';
+var client = mysql.createClient({
+  user: 'nukul',
+  password: 'Whatdoyoumean8',
+  host: 'bugsbounty.com'
+});
+client.query('USE '+DEV_DATA);
+/********/
 
 
 app.get("/user/:id", function (req,res, next){
@@ -15,20 +35,37 @@ app.get("/user/:id", function (req,res, next){
     }
 });
 
-app.get("/user/*", function (req, res, next) {
-    res.send("No such user was found.");
+app.post("/lp/user/add", function (req,res,next){
+    var name, email,
+        errors = [];
+    
+    req.onValidationError(function(msg) {
+        console.log('Validation error: ' + msg);
+        errors.push(msg);
+        return this;
+    });
+    req.assert('email', 'Invalid email').isEmail();
+    
+    req.sanitize('name').trim();
+    req.sanitize('name').xss();
+    req.sanitize('email').trim();
+
+    if (errors.length) {
+        res.send('There have been validation errors: ' + errors.join(', '), 500);
+        return;
+    }
+    
+    client.query(
+        'INSERT INTO lp_user '+
+            'SET name = ?, email = ?',
+            [ req.param('name'), req.param('email') ]
+    );
+    res.send("Success");
+    
 });
 
-app.post('/', function(req, res){
-    res.send(req.body);
-});
-
-//setup a static server
-app.configure(function(){
-    app.use(express.methodOverride());
-    app.use(express.bodyParser());
-    //this is all you have to setup a static server, the public folder is now exposed.
-    app.use(express.static(__dirname + '/public'));
+app.post("/", function (req,res,next){
+    res.send("Error"); 
 });
 
 app.listen('3000');
