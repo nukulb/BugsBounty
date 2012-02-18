@@ -2,7 +2,7 @@
 var express = require('express'),
     app = express.createServer(),
     expressValidator = require('express-validator'),
-    database = require('./lib/database');
+    dataApi = require('./lib/data-api');
 
 //setup a static server, make sure configure happens before you call req.body
 app.configure(function () {
@@ -26,31 +26,15 @@ app.get("/user/:id", function (req, res, next) {
 });
 
 app.post("/lp/user/add", function (req, res, next) {
-    var errors = [];
-    
-    req.onValidationError(function (msg) {
-        console.log('Validation error: ' + msg);
-        errors.push(msg);
-        return this;
-    });
-    req.assert('email', 'Invalid email').isEmail();
-    
-    req.sanitize('name').trim();
-    req.sanitize('name').xss();
-    req.sanitize('email').trim();
-
+   console.log(req); 
+    console.log("Server:"+req.param('name')+" "+req.param('email'));
+    var errors = dataApi.lpUserAdd(req,res);
     if (errors.length) {
         res.send('There have been validation errors: ' + errors.join(', '), 500);
         return;
     }
-    
-    database.query(
-        'INSERT INTO lp_user ' +
-            'SET name = ?, email = ?',
-            [ req.param('name'), req.param('email') ]
-    );
-    res.send("Success");
-    
+    res.send("Success"); 
+
 });
 
 app.post("/", function (req, res, next) {
@@ -59,5 +43,3 @@ app.post("/", function (req, res, next) {
 
 app.listen('3000');
 console.log('Server running at http://127.0.0.1:3000/');
-module.export = app;
-
