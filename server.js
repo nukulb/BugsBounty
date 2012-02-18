@@ -5,7 +5,7 @@ var express = require('express'),
     database = require('./lib/database');
 
 //setup a static server, make sure configure happens before you call req.body
-app.configure(function(){
+app.configure(function () {
     //app.use(express.methodOverride());
     app.use(express.bodyParser());
     app.use(expressValidator);
@@ -13,10 +13,10 @@ app.configure(function(){
     app.use(express.static(__dirname + '/public'));
 });
 
-app.get("/user/:id", function (req,res, next){
+app.get("/user/:id", function (req, res, next) {
     //lookup in database and send the :id back
     //let us assume we only support positive natural numbers for id values , reasonable assumption
-    if(req.params.id < 1){
+    if (req.params.id < 1) {
         res.send('Looked up user ' + req.params.id);
     } else {
         //pass the baton to the next app.get so now "lets try /user/* method right below this method.
@@ -25,11 +25,10 @@ app.get("/user/:id", function (req,res, next){
     }
 });
 
-app.post("/lp/user/add", function (req,res,next){
-    var name, email,
-        errors = [];
+app.post("/lp/user/add", function (req, res, next) {
+    var errors = [];
     
-    req.onValidationError(function(msg) {
+    req.onValidationError(function (msg) {
         console.log('Validation error: ' + msg);
         errors.push(msg);
         return this;
@@ -46,7 +45,7 @@ app.post("/lp/user/add", function (req,res,next){
     }
     
     database.query(
-        'INSERT INTO lp_user '+
+        'INSERT INTO lp_user ' +
             'SET name = ?, email = ?',
             [ req.param('name'), req.param('email') ]
     );
@@ -54,7 +53,7 @@ app.post("/lp/user/add", function (req,res,next){
     
 });
 
-app.post("/", function (req,res,next){
+app.post("/", function (req, res, next) {
     res.send("Error"); 
 });
 
