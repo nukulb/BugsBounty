@@ -1,41 +1,49 @@
-var  XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
-    childProcess = require('child_process'),
-    app = require('./../../server.js');
 describe("Server", function () {
-    var handle;
-    beforeEach(function () {
-        //handle = childProcess.exec('node ../../../server.js');
+
+var  XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
+    database = require('./../../lib/database');
+    
+    require('./../../server.js'),
+    
+    beforeEach(function (){
+        spyOn(database, "query");
     });
 
-    afterEach(function () {
-        //handle.kill(); 
-    });
-    
     it("can add users from the landing page", function() {
-        var xhr = new XMLHttpRequest(),
-            postParams;
-            xhr.open("POST", "http://127.0.0.1:3000/lp/user/add",true);
-            xhr.setRequestHeader("Content-type", "text/json");
-            postParams = {
-                name: "John Smith",
-                email: "john@smith.com"
-            };
-            /*xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4) {
-                     expect(xhr.responseText).toEqual('Success');
-                }
-            };*/
-            
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://127.0.0.1:3000/lp/user/add",true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+         
         runs(function () {
-            console.log("Client:"+JSON.stringify(postParams));
-            xhr.send(JSON.stringify(postParams));
+            xhr.send(JSON.stringify({name:"John Smith", email:"john@smith.com"}));
         });
+        
         waitsFor(function () {
                 return !!xhr.responseText;
-            }, "Error message if you don't make it here", 3000000
-        ); 
+        }, "Error message if you don't make it here", 3000000); 
+        
         runs(function () {
             expect(xhr.responseText).toEqual('Success');
+            expect(database.query).toHaveBeenCalled();
+        });
+    });
+    
+
+    it("cannot add users with invalid email address", function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://127.0.0.1:3000/lp/user/add",true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+         
+        runs(function () {
+            xhr.send(JSON.stringify({name:"John Smith", email:"johnsmith.com"}));
+        });
+        
+        waitsFor(function () {
+                return !!xhr.responseText;
+        }, "Error message if you don't make it here", 3000000); 
+        
+        runs(function () {
+            expect(xhr.status).toEqual(500);
         });
     });
 });

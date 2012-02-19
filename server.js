@@ -26,8 +26,6 @@ app.get("/user/:id", function (req, res, next) {
 });
 
 app.post("/lp/user/add", function (req, res, next) {
-   console.log(req); 
-    console.log("Server:"+req.param('name')+" "+req.param('email'));
     var errors = dataApi.lpUserAdd(req,res);
     if (errors.length) {
         res.send('There have been validation errors: ' + errors.join(', '), 500);
