@@ -1,26 +1,26 @@
 describe("Server", function () {
 
-var  XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
-    database = require('./../../../lib/database');
+    var  XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
+        database = require('./../../../lib/database');
+        
+    require('./../../../server');
     
-    require('./../../../server.js'),
-    
-    beforeEach(function (){
+    beforeEach(function () {
         spyOn(database, "query");
     });
 
-    it("can add users from the landing page", function() {
+    it("can add users from the landing page", function () {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://127.0.0.1:3000/lp/user/add",true);
+        xhr.open("POST", "http://127.0.0.1:3000/lp/user/add", true);
         xhr.setRequestHeader("Content-Type", "application/json");
          
         runs(function () {
-            xhr.send(JSON.stringify({name:"John Smith", email:"john@smith.com"}));
+            xhr.send(JSON.stringify({name: "John Smith", email: "john@smith.com"}));
         });
         
         waitsFor(function () {
                 return !!xhr.responseText;
-        }, "Error message if you don't make it here", 3000000); 
+            }, "Error message if you don't make it here", 3000000); 
         
         runs(function () {
             expect(xhr.responseText).toEqual('Success');
@@ -28,19 +28,18 @@ var  XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
         });
     });
     
-
-    it("cannot add users with invalid email address", function() {
+    it("cannot add users with invalid email address", function () {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://127.0.0.1:3000/lp/user/add",true);
+        xhr.open("POST", "http://127.0.0.1:3000/lp/user/add", true);
         xhr.setRequestHeader("Content-Type", "application/json");
          
         runs(function () {
-            xhr.send(JSON.stringify({name:"John Smith", email:"johnsmith.com"}));
+            xhr.send(JSON.stringify({name: "John Smith", email: "johnsmith.com"}));
         });
         
         waitsFor(function () {
                 return !!xhr.responseText;
-        }, "Error message if you don't make it here", 3000000); 
+            }, "Error message if you don't make it here", 3000000); 
         
         runs(function () {
             expect(xhr.status).toEqual(500);
