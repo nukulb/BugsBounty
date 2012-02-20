@@ -1,12 +1,14 @@
-var _self = {
+var _self, app;
+
+_self = {
     start: function () {
         //creating a server with express.
 
         var express = require('express'),
-            app = express.createServer(),
             expressValidator = require('express-validator'),
             dataApi = require('./lib/data-api');
-
+        
+        app = express.createServer();
         //setup a static server, make sure configure happens before you call req.body
         app.configure(function () {
             //app.use(express.methodOverride());
@@ -44,6 +46,10 @@ var _self = {
 
         app.listen('3000');
         console.log('Server running at http://127.0.0.1:3000/');
+    },
+    close: function () {
+        app.close();
+        //process.exit();
     }
 };
 module.exports = _self;
