@@ -1,10 +1,139 @@
-<html>
-    <head>
-        <title>Rockin' Page</title>
-        </head>
-    <body>
-        
-        <p>This is a page. For realz, yo.</p>
+<!DOCTYPE html>
+<!-- saved from url=(0076)file://localhost/Users/jasonscott/Downloads/Bootstrap,%20from%20Twitter.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Bootstrap, from Twitter</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    </body>
-</html>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Le styles -->
+
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/examples/images/favicon.ico">
+        <link rel="apple-touch-icon" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-114x114.png">
+    </head>
+
+    <body>
+        <!--
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar">Love Apps? We are Hiring</a>
+                    <a class="brand" href="#">Bugs Bounty<img src="img/profile.png"></a>
+                </div>
+            </div>
+        </div>
+    -->
+        <div class="container">
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit">
+                <h1>Bugs Bounty</h1>
+                <p>Have you just created the next best selling app</p>
+                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+            </div>
+            <div class="row ribbon">
+                <h1>Sign up now</h1>
+                <a id="testerBtn" class="btn">Sign up, It's Free »</a>
+            </div>
+            <div class="row">
+                <form  class="span4" id="userInfoForm" method="get" action="jasondscott.php">
+                    <input type="text" size="10" maxlength="40" name="name" placeholder="Name" required>
+                    <input type=email name=email placeholder="Email" required>
+                    <legend> Platform </legend>
+                    <div class="control-group">
+                        <label class="checkbox">
+                          <input type="checkbox" name="platform" value="ios">iOS</label>
+                        <label class="checkbox">
+                          <input type="checkbox" name="platform" value="android">Android</label>
+                        <label class="checkbox">
+                          <input type="checkbox" name="platform" value="blackberry">BlackBerry</label>
+                        <label class="checkbox">
+                          <input type="checkbox" name="platform" value="windows">Windows Phone</label>
+                    </div>
+                    <p>
+                        <input type=submit value="Sign up" > 
+                    </p>
+                </form>
+                <div class="span8">
+                    <video poster="http://www.html5rocks.com/en/tutorials/video/basics/star.png" controls>
+                      <source src="somevideo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                    </video>
+                </div>
+            </div>
+            
+
+            <!-- Example row of columns -->
+            <div class="row">
+                <div id="testerInfo" class="span4">
+                    <h2>App Junkie</h2>
+                    <p>Do you love having things first? Do you love  </p>
+                    <p><a id="testerBtn" class="btn">Sign up, It's Free »</a></p>
+                </div>
+                <div class="span4">
+                    <h2>It's Super Awesome</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nisl nisl, fermentum id fringilla nec, molestie vitae sapien. Suspendisse at quam eu nunc molestie tincidunt. Donec nisi nulla, suscipit quis accumsan at, placerat non ipsum. Morbi euismod, nulla ut iaculis malesuada, tortor lectus vehicula enim, vestibulum porta orci lorem id dolor. Cras enim ligula, pretium placerat adipiscing nec, placerat at odio. Proin nulla urna, vestibulum a lacinia sed, consequat in libero. Aliquam erat volutpat. Sed euismod nisl ac felis blandit ultricies.></p>
+                </div>
+                <div id="devInfo" class="span4">
+                    <h2>App Dealer</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a id="devBtn" class="btn">View details »</a></p>
+                    
+                </div>
+            </div>
+
+        <hr>
+
+        <footer>
+        <p>© Bugs Bounty 2012</p>
+        </footer>
+
+    </div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./js/jquery.js"></script>
+<script src="./js/bootstrap-transition.js"></script>
+<script src="./js/bootstrap-alert.js"></script>
+<script src="./js/bootstrap-modal.js"></script>
+<script src="./js/bootstrap-dropdown.js"></script>
+<script src="./js/bootstrap-scrollspy.js"></script>
+<script src="./js/bootstrap-tab.js"></script>
+<script src="./js/bootstrap-tooltip.js"></script>
+<script src="./js/bootstrap-popover.js"></script>
+<script src="./js/bootstrap-button.js"></script>
+<script src="./js/bootstrap-collapse.js"></script>
+<script src="./js/bootstrap-carousel.js"></script>
+<script src="./js/bootstrap-typeahead.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+            // Handler for .ready() called.
+                $('#testerBtn').click(function () {
+                    $('.ribbon .foldout').toggleClass('small');
+                });
+                $('#devInfo .btn').click(function () {
+                    $('#devInfo .foldout').toggleClass('small');
+                });
+            });
+</script>
+
+
+
+</body></html>
