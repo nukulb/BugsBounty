@@ -3,7 +3,7 @@ describe("Server", function () {
     var  XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
         database = require('./../../../lib/database');
         
-    require('./../../../server');
+    require('./../../../bin/start');
     
     beforeEach(function () {
         spyOn(database, "query");
