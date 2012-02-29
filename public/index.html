@@ -53,19 +53,23 @@
                 <a id="testerBtn" class="btn">Sign up, It's Free »</a>
             </div>
             <div class="row">
-                <form  class="span4" id="userInfoForm" method="get" action="jasondscott.php">
+                <form  class="span4" id="userInfoForm" method="post" action="lpUserAdd.html">
                     <input type="text" size="10" maxlength="40" name="name" placeholder="Name" required>
                     <input type=email name=email placeholder="Email" required>
                     <legend> Platform </legend>
                     <div class="control-group">
                         <label class="checkbox">
-                          <input type="checkbox" name="platform" value="ios">iOS</label>
+                          <input type="checkbox" name="platform_ios" value="ios">iOS</label>
                         <label class="checkbox">
-                          <input type="checkbox" name="platform" value="android">Android</label>
+                          <input type="checkbox" name="platform_android" value="android">Android</label>
                         <label class="checkbox">
-                          <input type="checkbox" name="platform" value="blackberry">BlackBerry</label>
+                          <input type="checkbox" name="platform_blackberry" value="blackberry">BlackBerry</label>
                         <label class="checkbox">
-                          <input type="checkbox" name="platform" value="windows">Windows Phone</label>
+                          <input type="checkbox" name="platform_windows" value="windows">Windows Phone</label>
+                        <label class="checkbox">
+                          <input type="checkbox" name="tester" value="tester">Tester</label>
+                        <label class="checkbox">
+                          <input type="checkbox" name="developer" value="developer">Developer</label>
                     </div>
                     <p>
                         <input type=submit value="Sign up" > 

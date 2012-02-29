@@ -29,6 +29,16 @@ _self = {
                 next();
             }
         });
+        app.post("/lpUserAdd.html", function (req, res, next) {
+            var errors = dataApi.lpUserAdd(req, res);
+            if (errors.length) {
+                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                return;
+            }
+            res.redirect("/lpUserAdd.html");
+            //res.send("Success");
+
+        });
 
         app.post("/lp/user/add", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
