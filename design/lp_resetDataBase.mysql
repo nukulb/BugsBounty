@@ -1,0 +1,49 @@
+
+
+
+
+-- ---
+-- Globals
+-- ---
+
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
+
+-- ---
+-- Table 'LP_USER'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `LP_USER`;
+		
+CREATE TABLE `LP_USER` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
+  `developer` INTEGER NULL DEFAULT 0,
+  `tester` INTEGER NULL DEFAULT 0,
+  `platform_ios` INTEGER NULL DEFAULT 0,
+  `platform_blackberry` INTEGER NULL DEFAULT 0,
+  `platform_android` INTEGER NULL DEFAULT 0,
+  `platform_windows` INTEGER NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Foreign Keys 
+-- ---
+
+
+-- ---
+-- Table Properties
+-- ---
+
+-- ALTER TABLE `LP_USER` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ---
+-- Test Data
+-- ---
+
+-- INSERT INTO `LP_USER` (`id`,`email`,`developer`,`tester`,`platform_ios`,`platform_blackberry`,`platform_android`,`platform_windows`) VALUES
+-- ('','','','','','','','');
+
+
