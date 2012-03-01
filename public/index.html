@@ -2,7 +2,7 @@
 <!-- saved from url=(0076)file://localhost/Users/jasonscott/Downloads/Bootstrap,%20from%20Twitter.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>Bootstrap, from Twitter</title>
+        <title>Bugs Bounty</title>
         <meta name="description" content="">
         <meta name="author" content="">
 
@@ -16,10 +16,13 @@
         <link href="css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             body {
+                background-color:#89CEDE;
                 padding-top: 60px;
                 padding-bottom: 40px;
+                color: #fff;
             }
         </style>
+        
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
@@ -31,73 +34,128 @@
     </head>
 
     <body>
-        <!--
+        
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
+                <!--
                 <div class="container">
-                    <a class="btn btn-navbar">Love Apps? We are Hiring</a>
-                    <a class="brand" href="#">Bugs Bounty<img src="img/profile.png"></a>
+                
+                    <a class="brand" href="#"><h1>Bugs Bounty</h1></a>
+                    <ul class="nav-collapse pull-right">
+			            <li><a href="#">About</a></li>
+
+						<li><a href="#">Contact</a></li>
+
+						<li><a href="#">Features</a></li>
+
+						<li><a href="#">Blog</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="#">Sign up</a></li>
+			        </ul>
+
+
                 </div>
+                -->
+                
+                <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Bugs Bounty</a>
+          <div class="nav-collapse">
+            <ul class="nav pull-right">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="#">Sign up</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+        
             </div>
         </div>
-    -->
+    
         <div class="container">
             <!-- Main hero unit for a primary marketing message or call to action -->
+            <!--
             <div class="hero-unit">
                 <h1>Bugs Bounty</h1>
-                <p>Have you just created the next best selling app</p>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             </div>
-            <div class="row ribbon">
-                <h1>Sign up now</h1>
-                <a id="testerBtn" class="btn">Sign up, It's Free »</a>
-            </div>
-            <div class="row">
-                <form  class="span4" id="userInfoForm" method="get" action="jasondscott.php">
-                    <input type="text" size="10" maxlength="40" name="name" placeholder="Name" required>
-                    <input type=email name=email placeholder="Email" required>
-                    <legend> Platform </legend>
-                    <div class="control-group">
-                        <label class="checkbox">
-                          <input type="checkbox" name="platform" value="ios">iOS</label>
-                        <label class="checkbox">
-                          <input type="checkbox" name="platform" value="android">Android</label>
-                        <label class="checkbox">
-                          <input type="checkbox" name="platform" value="blackberry">BlackBerry</label>
-                        <label class="checkbox">
-                          <input type="checkbox" name="platform" value="windows">Windows Phone</label>
-                    </div>
-                    <p>
-                        <input type=submit value="Sign up" > 
-                    </p>
-                </form>
-                <div class="span8">
-                    <video poster="http://www.html5rocks.com/en/tutorials/video/basics/star.png" controls>
-                      <source src="somevideo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-                    </video>
+            -->
+            <div class="hero-unit">
+                <div id="myCarousel" class="carousel">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                  <div class="active item">
+                    <img src="img/img1.jpg"> 
+                  </div>
+                  <div class="item">
+                    <img src="img/img2.jpg"> 
+                  </div>
                 </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+              </div>
             </div>
-            
 
-            <!-- Example row of columns -->
-            <div class="row">
-                <div id="testerInfo" class="span4">
-                    <h2>App Junkie</h2>
-                    <p>Do you love having things first? Do you love  </p>
-                    <p><a id="testerBtn" class="btn">Sign up, It's Free »</a></p>
-                </div>
-                <div class="span4">
-                    <h2>It's Super Awesome</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nisl nisl, fermentum id fringilla nec, molestie vitae sapien. Suspendisse at quam eu nunc molestie tincidunt. Donec nisi nulla, suscipit quis accumsan at, placerat non ipsum. Morbi euismod, nulla ut iaculis malesuada, tortor lectus vehicula enim, vestibulum porta orci lorem id dolor. Cras enim ligula, pretium placerat adipiscing nec, placerat at odio. Proin nulla urna, vestibulum a lacinia sed, consequat in libero. Aliquam erat volutpat. Sed euismod nisl ac felis blandit ultricies.></p>
-                </div>
-                <div id="devInfo" class="span4">
-                    <h2>App Dealer</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a id="devBtn" class="btn">View details »</a></p>
+            <div class="row center">
+                <div class="span6 hero-btn hero-unit">
+                    <h1>Tester</h1>
+                    <p><img class="heart" src="img/Theart.png"> Apps? Get exclusive access to new applications</p>
                     
+                    <form  id="testerInfoForm" class="infoForm" method="get" action="jasondscott.php">
+                        <div class="row center">
+                            <input type=name name=name placeholder="Name">
+                        </div>
+                        <div class="row center">
+                            <input type=email name=email placeholder="Email" required>
+                        </div>
+                        <div class="platform-picker clearfix" style="">
+                            <ul class="button-picker" style="">
+                                <li><a class="ios first" href="#ios-x4"><span></span>iOS</a></li>
+                                <li><a class="android" href="#android"><span></span>Android</a></li>
+                                <li><a class="blackberry" href="#blackberry"><span></span>Blackberry</a></li>
+                                <li><a class="windows" href="#wp"><span></span>Windows Phone</a></li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <input type=submit value="Sign up">
+                        </div>
+                        <!--<input type=submit value="Sign up"> -->
+                    </form>
+                    <a class="btn btn-primary btn-large">Learn more »</a>
+                </div>
+                <div class="span6 hero-unit hero-btn ">
+                    <h1>Developer</h1>
+                    <p>The average best selling app takes 743 hours of testing after development is finished. Are you ready to release?</p>
+                    
+                    <form  id="devInfoForm" class="infoForm" method="get" action="jasondscott.php">
+                        <div class="row">
+                            <input type=name name=name placeholder="Name">
+                        </div>
+                        <div class="row">
+                            <input type=email name=email placeholder="Email" required>
+                        </div>
+                        <div class="platform-picker clearfix" style="">
+                            <ul class="button-picker" style="">
+                                <li><a class="ios first" href="#ios-x4"><span></span>iOS</a></li>
+                                <li><a class="android" href="#android"><span></span>Android</a></li>
+                                <li><a class="blackberry" href="#blackberry"><span></span>Blackberry</a></li>
+                                <li><a class="windows" href="#wp"><span></span>Windows Phone</a></li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <input type=submit value="Sign up">
+                        </div>
+                    </form>
+                    <a class="btn btn-primary btn-large">Learn more »</a>
                 </div>
             </div>
-
         <hr>
 
         <footer>
@@ -124,14 +182,17 @@
 <script src="./js/bootstrap-typeahead.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-            // Handler for .ready() called.
-                $('#testerBtn').click(function () {
-                    $('.ribbon .foldout').toggleClass('small');
-                });
-                $('#devInfo .btn').click(function () {
-                    $('#devInfo .foldout').toggleClass('small');
-                });
-            });
+        //$('.carousel').carousel();
+        $(".button-picker li a").click(function(obj){
+            $(this).toggleClass("selected");
+        });
+        $("#testerInfoForm").addClass("hidden");
+        $("#devInfoForm").addClass("hidden");
+        $(".hero-btn").click(function(obj){
+            $(this).children('form').removeClass("hidden");
+        });
+        
+    });
 </script>
 
 
