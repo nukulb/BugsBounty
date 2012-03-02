@@ -37,26 +37,6 @@
         
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
-                <!--
-                <div class="container">
-                
-                    <a class="brand" href="#"><h1>Bugs Bounty</h1></a>
-                    <ul class="nav-collapse pull-right">
-			            <li><a href="#">About</a></li>
-
-						<li><a href="#">Contact</a></li>
-
-						<li><a href="#">Features</a></li>
-
-						<li><a href="#">Blog</a></li>
-						<li class="divider-vertical"></li>
-						<li><a href="#">Sign up</a></li>
-			        </ul>
-
-
-                </div>
-                -->
-                
                 <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
@@ -109,51 +89,77 @@
                     <p><img class="heart" src="img/Theart.png"> Apps? Get exclusive access to new applications</p>
                     
                     <form  id="testerInfoForm" class="infoForm" method="get" action="jasondscott.php">
-                        <div class="row center">
+                        <input type="hidden" name="role" value="tester">
+                        <div class="row">
                             <input type=name name=name placeholder="Name">
                         </div>
                         <div class="row center">
                             <input type=email name=email placeholder="Email" required>
                         </div>
-                        <div class="platform-picker clearfix" style="">
-                            <ul class="button-picker" style="">
-                                <li><a class="ios first" href="#ios-x4"><span></span>iOS</a></li>
-                                <li><a class="android" href="#android"><span></span>Android</a></li>
-                                <li><a class="blackberry" href="#blackberry"><span></span>Blackberry</a></li>
-                                <li><a class="windows" href="#wp"><span></span>Windows Phone</a></li>
+                        <div class="platform-picker clearfix">
+                            <ul class="button-picker-nojs">
+                                <li>
+                                    <a class="ios" href="#ios"><span></span>iOS</a>
+                                    <label class="checkbox"><input type="checkbox" name="ios" value="true">iOS</label>
+                                </li>
+                                <li>
+                                    <a class="android" href="#android"><span></span>Android</a>
+                                    <label class="checkbox"><input type="checkbox" name="android" value="true">Android</label>
+                                </li>
+                                <li>
+                                    <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
+                                    <label class="checkbox"><input type="checkbox" name="blackberry" value="true">BlackBerry</label>
+                                </li>
+                                <li>
+                                    <a class="windows" href="#wp"><span></span>Windows Phone</a>
+                                    <label class="checkbox"><input type="checkbox" name="wp" value="true">Windows Phone</label>
+                                </li>
                             </ul>
                         </div>
                         <div class="row">
-                            <input type=submit value="Sign up">
+                            <input type=submit value="Sign up, it's Free">
                         </div>
                         <!--<input type=submit value="Sign up"> -->
                     </form>
-                    <a class="btn btn-primary btn-large">Learn more »</a>
+                    <a class="btn btn-primary btn-large needjs">Learn more »</a>
                 </div>
                 <div class="span6 hero-unit hero-btn ">
                     <h1>Developer</h1>
                     <p>The average best selling app takes 743 hours of testing after development is finished. Are you ready to release?</p>
                     
-                    <form  id="devInfoForm" class="infoForm" method="get" action="jasondscott.php">
+                    <form  id="devInfoForm" class="infoForm" method="get" action="/add">
+                        <input type="hidden" name="role" value="dev">
                         <div class="row">
                             <input type=name name=name placeholder="Name">
                         </div>
                         <div class="row">
                             <input type=email name=email placeholder="Email" required>
                         </div>
-                        <div class="platform-picker clearfix" style="">
-                            <ul class="button-picker" style="">
-                                <li><a class="ios first" href="#ios-x4"><span></span>iOS</a></li>
-                                <li><a class="android" href="#android"><span></span>Android</a></li>
-                                <li><a class="blackberry" href="#blackberry"><span></span>Blackberry</a></li>
-                                <li><a class="windows" href="#wp"><span></span>Windows Phone</a></li>
+                        <div class="platform-picker clearfix">
+                            <ul class="button-picker-nojs">
+                                <li>
+                                    <a class="ios" href="#ios"><span></span>iOS</a>
+                                    <label class="checkbox"><input type="checkbox" name="ios" value="true">iOS</label>
+                                </li>
+                                <li>
+                                    <a class="android" href="#android"><span></span>Android</a>
+                                    <label class="checkbox"><input type="checkbox" name="android" value="true">Android</label>
+                                </li>
+                                <li>
+                                    <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
+                                    <label class="checkbox"><input type="checkbox" name="blackberry" value="true">BlackBerry</label>
+                                </li>
+                                <li>
+                                    <a class="windows" href="#wp"><span></span>Windows Phone</a>
+                                    <label class="checkbox"><input type="checkbox" name="wp" value="true">Windows Phone</label>
+                                </li>
                             </ul>
                         </div>
                         <div class="row">
-                            <input type=submit value="Sign up">
+                            <input type=submit value="Sign up, it's Free">
                         </div>
                     </form>
-                    <a class="btn btn-primary btn-large">Learn more »</a>
+                    <a class="btn btn-primary btn-large needjs">Learn more »</a>
                 </div>
             </div>
         <hr>
@@ -182,16 +188,46 @@
 <script src="./js/bootstrap-typeahead.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        //$('.carousel').carousel();
-        $(".button-picker li a").click(function(obj){
-            $(this).toggleClass("selected");
-        });
-        $("#testerInfoForm").addClass("hidden");
-        $("#devInfoForm").addClass("hidden");
+
+        //Remove anything the NEEDS js
+        $(".needjs").removeClass("needjs");
+
+        //Swaping the no-js version for the js version
+        $(".button-picker-nojs").addClass("button-picker").removeClass("button-picker-nojs");
+
+        //Show the js platform picker and hide the no-js version
+        $(".platform-picker a").removeClass("hidden");
+        $(".platform-picker label").addClass("hidden");
+
+        //Hide the forms
+        $("form").addClass("hidden");
+
+        //Show the form when any of the area is clicked
         $(".hero-btn").click(function(obj){
             $(this).children('form').removeClass("hidden");
+            $(this).children('.btn-primary').addClass("hidden");
         });
+
+        //When a platform is picked, select it
+        $(".button-picker li a").click(function(obj){
+            $(this).toggleClass("selected");
+            //Select the appropriate checkbox
+            var $checkbox = $(this).parent().find(':checkbox');
+            $checkbox.attr('checked', !$checkbox.attr('checked'));
+        });
+
+        //Build the signup XHR
+        $('form').submit(function() {
+            var form_data = $(this).serialize();
+
+            $.post('bugsbounty.com', form_data, function(data) {
+                $('.result').html(data);
+            })
+            .error( function() { console.log("no dice");});
         
+            //Prevent default form submission
+            return false;
+        });
     });
 </script>
 

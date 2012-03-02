@@ -1,12 +1,18 @@
-@font-face {
-  font-family: 'NikeGratton';
-  src: url('gratton-webfont.woff');
-  font-weight: normal;
-  font-style: normal;
+
+.row input {
+	margin-left: 20px;
+}
+.needjs {
+	visibility: hidden;
+	display: none;
 }
 
 .brand h1 {
     color: #fff;
+}
+
+.brand img {
+    max-height: 80px;
 }
 
 .nav a {
@@ -35,6 +41,8 @@
     border-bottom-right-radius: 5px;
 }
 
+/*Hero Upgrades*/
+
 .hero-btn {
     cursor: pointer;
     padding:15px 0 15px 0;
@@ -46,34 +54,19 @@
 
 .hero-btn p {
     color: black;
+    padding: 0 5%;
+}
+
+.hero-unit {
+    text-align: center;
 }
 
 .heart {
     max-height: 1.3em;
 }
 
-.hero-unit {
-    text-align: center;
-}
 #userInfoForm ol li {
     list-style-type: none;
-}
-
-.small {
-    height: 0 !important;
-    -webkit-transition: all 0.5s ease-in-out;
-    overflow: hidden;
-    display: none;
-}
-
-.foldout {
-    /*background: whiteSmoke;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    */
-    height: auto;
-    margin-top: 20px;
 }
 
 .mainLogo {
@@ -83,33 +76,13 @@
     background-color: #f5f5f5;
 }
 
-.brand img {
-    max-height: 80px;
-}
 
-.btn-navbar {
-    color: black;
-    float: right;
-    padding: 7px 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: #FF8000;
-    background-image: -moz-linear-gradient(top, #FAAC58, #FF8000);
-    background-image: -ms-linear-gradient(top, #FAAC58, #FF8000);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FAAC58), to(#FF8000));
-    background-image: -webkit-linear-gradient(top, #FAAC58, #FF8000);
-    background-image: -o-linear-gradient(top, #FAAC58, #FF8000);
-    background-image: linear-gradient(top, #FAAC58, #FF8000);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAAC58333', endColorstr='#FF8000222', GradientType=0);
-    border-color: #FF8000 #FF8000 #FF8000;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
-}
 
+@media (max-width: 767px) {
+	.hero-btn {
+		margin-bottom: 20px !important;
+	}
+}
 
 @media (max-width: 980px) and (min-width: 768px), (max-width: 450px) {
  
@@ -194,8 +167,21 @@ html[xmlns] .clearfix {
     display: block;    
 }
 
+/*button-picker*/
+
 .button-picker {
     margin: 0;
+}
+
+.button-picker-nojs li {
+	list-style: none;
+	float: left;
+	position: relative;
+	width: 96px;
+}
+
+.button-picker-nojs a{
+	visibility: hidden;
 }
 
 .guide .button-picker li{padding:0; list-style:none; margin:0}
