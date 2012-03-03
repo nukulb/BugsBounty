@@ -1,0 +1,188 @@
+@import "elements.less";
+
+.row input {
+	margin-left: 20px;
+}
+
+.needjs {
+	visibility: hidden;
+	display: none;
+}
+
+.brand {
+    h1 {
+        color: #fff;
+    }	
+	img {
+        max-height: 80px;
+    }
+}
+
+.nav a {
+	font-size: 20px;
+}
+
+.heart {
+    max-height: 1.3em;
+}
+
+.hero-unit {
+	padding: 4%;
+}
+
+.carousel {
+	margin-bottom: 0;
+}
+
+.button-picker {
+    li a{
+        border: 2px solid black;
+    }
+    li:first-child a {
+		.border-radius(0, 0, 5px, 5px);
+    }
+	li:last-child a {
+        .border-radius(5px, 5px, 0, 0);
+    }
+}
+
+/*Hero Upgrades*/
+
+.hero-btn {
+    cursor: pointer;
+    padding:15px 0 15px 0;
+	strong {
+        font-size: 250%;
+    }
+	p {
+	    color: black;
+        padding: 0 5%;
+	}
+}
+
+.hero-unit {
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+	.hero-btn {
+		margin-bottom: 20px !important;
+	}
+}
+
+@media (max-width: 980px) and (min-width: 768px), (max-width: 450px) {
+	.platform-picker {
+		width: 200px;
+	}
+
+	.button-picker li:nth-child(2) a {
+		border-top-right-radius: 5px;
+	}
+	
+	.button-picker li:nth-child(3) a {
+		border-bottom-left-radius: 5px;
+	}
+
+	.button-picker li:nth-child(4) a {
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 5px;
+	}
+}
+
+@media (max-width: 768px) and (min-width: 450){
+	.platform-picker {
+		width: 400px;
+	}
+	
+	.button-picker {
+		li:nth-child(2) a {
+            border-top-right-radius: 5px;
+		}
+		li:nth-child(3) a {
+		    border-bottom-left-radius: 5px;
+	    }
+		li:nth-child(4) a {
+		    border-top-right-radius: 0px;
+		    border-bottom-right-radius: 5px;
+		}
+	}
+}
+
+.platform {
+    text-align: left;
+    width: 200px;
+}
+
+.center {
+    text-align: center;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+.platform .blackberry {
+    background-position: -100px -350px;
+}
+
+.platform {
+    background: url(img/sprite5.png ) no-repeat 0 -350px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 22px;
+    top: 16px;
+    line-height: 0;
+    display: block;    
+}
+
+/*button-picker*/
+
+.button-picker {
+    margin: 0;
+}
+
+.button-picker-nojs li {
+	list-style: none;
+	float: left;
+	position: relative;
+	width: 96px;
+}
+
+.button-picker-nojs a{
+	visibility: hidden;
+}
+
+.guide .button-picker li{padding:0; list-style:none; margin:0}
+.button-picker li, .button-picker li a{height:98px; width:96px}
+.button-picker li{float:left; padding:0; position:relative; cursor:pointer; list-style-type: none;}
+.button-picker li a{display:block; background:#858a91; padding:0; text-align:center; line-height:155px; color:#bdbfc3; font-size:11px; font-family:"HelveticaNeue-Bold","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif; font-weight:700; text-shadow:0 -1px 0 #515458; position:relative;}
+.button-picker li a:hover{background-color:#989ea6; text-decoration:none}
+.button-picker li a:active{background-color:#7e848c}
+.button-picker li a.selected{background-color:#ececec; color:#333; text-shadow:0 1px 0 #efefef}
+
+.button-picker li span{background:url(img/sprite5.png ) no-repeat 0 -350px; position:absolute; width:50px; height:50px; left:22px; top:16px; line-height:0; display:block}
+.button-picker li .selected span{background-position:0 -300px}
+.button-picker li .android span{background-position:-50px -350px}
+.button-picker li .android.selected span{background-position:-50px -300px}
+.button-picker li .blackberry span{background-position:-100px -350px}
+.button-picker li .blackberry.selected span{background-position:-100px -300px}
+.button-picker li .windows span{background-position:-200px -350px}
+.button-picker li .windows.selected span{background-position:-200px -300px}
