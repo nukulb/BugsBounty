@@ -1,12 +1,17 @@
 describe("Server", function () {
 
-    var  XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
-        database = require('./../../../lib/database');
-        
-    require('./../../../bin/start');
+    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
+        database = require('./../../../lib/database'),
+        server = require('./../../../server');
     
     beforeEach(function () {
         spyOn(database, "query");
+        spyOn(console, "log");
+        server.start();
+    });
+
+    afterEach(function () {
+        server.close();
     });
 
     it("can add users from the landing page", function () {
