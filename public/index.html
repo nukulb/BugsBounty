@@ -89,7 +89,7 @@
                     <p><img class="heart" src="img/Theart.png"> Apps? Get exclusive access to new applications</p>
                     
                     <form  id="testerInfoForm" class="infoForm" method="get" action="jasondscott.php">
-                        <input type="hidden" name="role" value="tester">
+                        <input type="hidden" name="tester" value="tester">
                         <div class="row">
                             <input type=name name=name placeholder="Name">
                         </div>
@@ -100,19 +100,19 @@
                             <ul class="button-picker-nojs">
                                 <li>
                                     <a class="ios" href="#ios"><span></span>iOS</a>
-                                    <label class="checkbox"><input type="checkbox" name="ios" value="true">iOS</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
                                 </li>
                                 <li>
                                     <a class="android" href="#android"><span></span>Android</a>
-                                    <label class="checkbox"><input type="checkbox" name="android" value="true">Android</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
                                 </li>
                                 <li>
                                     <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
-                                    <label class="checkbox"><input type="checkbox" name="blackberry" value="true">BlackBerry</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
                                 </li>
                                 <li>
                                     <a class="windows" href="#wp"><span></span>Windows Phone</a>
-                                    <label class="checkbox"><input type="checkbox" name="wp" value="true">Windows Phone</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_windows" value="true">Windows Phone</label>
                                 </li>
                             </ul>
                         </div>
@@ -128,7 +128,7 @@
                     <p>The average best selling app takes 743 hours of testing after development is finished. Are you ready to release?</p>
                     
                     <form  id="devInfoForm" class="infoForm" method="get" action="/add">
-                        <input type="hidden" name="role" value="dev">
+                        <input type="hidden" name="developer" value="developer">
                         <div class="row">
                             <input type=name name=name placeholder="Name">
                         </div>
@@ -139,19 +139,19 @@
                             <ul class="button-picker-nojs">
                                 <li>
                                     <a class="ios" href="#ios"><span></span>iOS</a>
-                                    <label class="checkbox"><input type="checkbox" name="ios" value="true">iOS</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
                                 </li>
                                 <li>
                                     <a class="android" href="#android"><span></span>Android</a>
-                                    <label class="checkbox"><input type="checkbox" name="android" value="true">Android</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
                                 </li>
                                 <li>
                                     <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
-                                    <label class="checkbox"><input type="checkbox" name="blackberry" value="true">BlackBerry</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
                                 </li>
                                 <li>
                                     <a class="windows" href="#wp"><span></span>Windows Phone</a>
-                                    <label class="checkbox"><input type="checkbox" name="wp" value="true">Windows Phone</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_wp" value="true">Windows Phone</label>
                                 </li>
                             </ul>
                         </div>
@@ -220,7 +220,7 @@
         $('form').submit(function() {
             var form_data = $(this).serialize();
 
-            $.post('bugsbounty.com', form_data, function(data) {
+            $.post('lp/user/add', form_data, function(data) {
                 $('.result').html(data);
             })
             .error( function() { console.log("no dice");});
