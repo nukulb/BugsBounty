@@ -1,4 +1,5 @@
 @import "elements.less";
+@import "../dependencies/bootstrap/less/variables.less";
 
 .row input {
 	margin-left: 20px;
@@ -18,8 +19,16 @@
     }
 }
 
-.nav a {
-	font-size: 20px;
+.nav {
+	a {
+		font-size: 20px;
+	}
+}
+
+.navbar .nav > li > a {	
+	.button-primary.btn-large {
+		color: @a2;
+	}
 }
 
 .heart {
@@ -143,7 +152,7 @@ html[xmlns] .clearfix {
 }
 
 .platform {
-    background: url(img/sprite5.png ) no-repeat 0 -350px;
+    background: url('../img/sprite5.png' ) no-repeat 0 -350px;
     position: absolute;
     width: 50px;
     height: 50px;
@@ -178,7 +187,7 @@ html[xmlns] .clearfix {
 .button-picker li a:active{background-color:#7e848c}
 .button-picker li a.selected{background-color:#ececec; color:#333; text-shadow:0 1px 0 #efefef}
 
-.button-picker li span{background:url(img/sprite5.png ) no-repeat 0 -350px; position:absolute; width:50px; height:50px; left:22px; top:16px; line-height:0; display:block}
+.button-picker li span{background:url('../img/sprite5.png' ) no-repeat 0 -350px; position:absolute; width:50px; height:50px; left:22px; top:16px; line-height:0; display:block}
 .button-picker li .selected span{background-position:0 -300px}
 .button-picker li .android span{background-position:-50px -350px}
 .button-picker li .android.selected span{background-position:-50px -300px}

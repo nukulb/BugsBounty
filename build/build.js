@@ -16,7 +16,8 @@
 var childProcess = require("child_process"),
     util = require("util"),
     jWorkflow = require("jWorkflow"),
-    clean = require("./build/clean");
+    clean = require("./build/clean"),
+    lessc = require("./build/lessc");
 
 function _done(error) {
     if (error) {
@@ -39,7 +40,7 @@ function _handle(func) {
 }
 
 module.exports = _handle(function () {
-    var build = jWorkflow.order(clean);
+    var build = jWorkflow.order(clean).andThen(lessc);
 
     build.start(function (error) {
         _done(error);
