@@ -7,8 +7,7 @@ function _getCmd() {
     if (utils.isWindows()) {
         return "don't have time to write windows build scripts, why the hell are you on windows??"; 
     } else {
-        return "lessc "+ _c.ROOT + "less/style.less >" + _c.ROOT + "public/css/style.css && "+
-                "make -f " + _c.DEPENDENCIES_BOOTSTRAP+"/Makefile bootstrap ";
+        return "cp -fr "+ _c.DEPENDENCIES_BOOTSTRAP+"/bootstrap "+ _c.ROOT + "public/";   
     }
 }
 

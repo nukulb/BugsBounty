@@ -271,6 +271,9 @@
     this.$element = $(element)
     this.options = $.extend({}, $.fn.carousel.defaults, options)
     this.options.slide && this.slide(this.options.slide)
+    this.options.pause == 'hover' && this.$element
+      .on('mouseenter', $.proxy(this.pause, this))
+      .on('mouseleave', $.proxy(this.cycle, this))
   }
 
   Carousel.prototype = {
@@ -325,13 +328,13 @@
         , fallback  = type == 'next' ? 'first' : 'last'
         , that = this
 
-      if (!$next.length) return
-
       this.sliding = true
 
       isCycling && this.pause()
 
       $next = $next.length ? $next : this.$element.find('.item')[fallback]()
+
+      if ($next.hasClass('active')) return
 
       if (!$.support.transition && this.$element.hasClass('slide')) {
         this.$element.trigger('slide')
@@ -378,6 +381,7 @@
 
   $.fn.carousel.defaults = {
     interval: 5000
+  , pause: 'hover'
   }
 
   $.fn.carousel.Constructor = Carousel
@@ -1039,7 +1043,7 @@
       title = $e.attr('data-original-title')
         || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
 
-      title = title.toString().replace(/(^\s*|\s*$)/, "")
+      title = (title || '').toString().replace(/(^\s*|\s*$)/, "")
 
       return title
     }

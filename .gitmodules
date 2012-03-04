@@ -1,0 +1,3 @@
+[submodule "dependencies/bootstrap"]
+	path = dependencies/bootstrap
+	url = https://github.com/twitter/bootstrap.git
