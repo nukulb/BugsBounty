@@ -1,0 +1,3 @@
+[submodule "dependencies/AutoMySQLBackup"]
+	path = dependencies/AutoMySQLBackup
+	url = http://github.com/rcruz/AutoMySQLBackup.git
