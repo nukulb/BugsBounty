@@ -13,7 +13,7 @@
 
         <!-- Le styles -->
 
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             body {
                 background-color:#89CEDE;
@@ -23,7 +23,7 @@
             }
         </style>
         
-        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
         <!-- Le fav and touch icons -->
@@ -43,7 +43,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Bugs Bounty</a>
+          <a class="brand" href="#"><span style="font-size: 125%">&#0946;</span>UGS <span style="font-size: 125%">&#0946;</span>OUNTY</a>
           <div class="nav-collapse">
             <ul class="nav pull-right">
               <li class="active"><a href="#">Home</a></li>
@@ -51,7 +51,7 @@
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
               <li class="divider-vertical"></li>
-              <li><a href="#">Sign up</a></li>
+              <li><a href="#" class="special" >Sign up</span></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -88,8 +88,8 @@
                     <h1>Tester</h1>
                     <p><img class="heart" src="img/Theart.png"> Apps? Get exclusive access to new applications</p>
                     
-                    <form  id="testerInfoForm" class="infoForm" method="get" action="jasondscott.php">
-                        <input type="hidden" name="role" value="tester">
+                    <form  id="testerInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
+                        <input type="hidden" name="tester" value="tester">
                         <div class="row">
                             <input type=name name=name placeholder="Name">
                         </div>
@@ -100,35 +100,35 @@
                             <ul class="button-picker-nojs">
                                 <li>
                                     <a class="ios" href="#ios"><span></span>iOS</a>
-                                    <label class="checkbox"><input type="checkbox" name="ios" value="true">iOS</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
                                 </li>
                                 <li>
                                     <a class="android" href="#android"><span></span>Android</a>
-                                    <label class="checkbox"><input type="checkbox" name="android" value="true">Android</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
                                 </li>
                                 <li>
                                     <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
-                                    <label class="checkbox"><input type="checkbox" name="blackberry" value="true">BlackBerry</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
                                 </li>
                                 <li>
                                     <a class="windows" href="#wp"><span></span>Windows Phone</a>
-                                    <label class="checkbox"><input type="checkbox" name="wp" value="true">Windows Phone</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_windows" value="true">Windows Phone</label>
                                 </li>
                             </ul>
                         </div>
                         <div class="row">
-                            <input type=submit value="Sign up, it's Free">
+                            <input type=submit class="btn-primary btn-large" value="Sign up, it's Free">
                         </div>
                         <!--<input type=submit value="Sign up"> -->
                     </form>
                     <a class="btn btn-primary btn-large needjs">Learn more »</a>
                 </div>
-                <div class="span6 hero-unit hero-btn ">
+                <div id= "mydiv" class="span6 hero-unit hero-btn ">
                     <h1>Developer</h1>
                     <p>The average best selling app takes 743 hours of testing after development is finished. Are you ready to release?</p>
                     
-                    <form  id="devInfoForm" class="infoForm" method="get" action="/add">
-                        <input type="hidden" name="role" value="dev">
+                    <form  id="devInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
+                        <input type="hidden" name="developer" value="developer">
                         <div class="row">
                             <input type=name name=name placeholder="Name">
                         </div>
@@ -139,24 +139,24 @@
                             <ul class="button-picker-nojs">
                                 <li>
                                     <a class="ios" href="#ios"><span></span>iOS</a>
-                                    <label class="checkbox"><input type="checkbox" name="ios" value="true">iOS</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
                                 </li>
                                 <li>
                                     <a class="android" href="#android"><span></span>Android</a>
-                                    <label class="checkbox"><input type="checkbox" name="android" value="true">Android</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
                                 </li>
                                 <li>
                                     <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
-                                    <label class="checkbox"><input type="checkbox" name="blackberry" value="true">BlackBerry</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
                                 </li>
                                 <li>
                                     <a class="windows" href="#wp"><span></span>Windows Phone</a>
-                                    <label class="checkbox"><input type="checkbox" name="wp" value="true">Windows Phone</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_wp" value="true">Windows Phone</label>
                                 </li>
                             </ul>
                         </div>
                         <div class="row">
-                            <input type=submit value="Sign up, it's Free">
+                            <input type=submit class="btn-primary btn-large" value="Sign up, it's Free">
                         </div>
                     </form>
                     <a class="btn btn-primary btn-large needjs">Learn more »</a>
@@ -173,19 +173,10 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="./js/jquery.js"></script>
-<script src="./js/bootstrap-transition.js"></script>
-<script src="./js/bootstrap-alert.js"></script>
-<script src="./js/bootstrap-modal.js"></script>
-<script src="./js/bootstrap-dropdown.js"></script>
-<script src="./js/bootstrap-scrollspy.js"></script>
-<script src="./js/bootstrap-tab.js"></script>
-<script src="./js/bootstrap-tooltip.js"></script>
-<script src="./js/bootstrap-popover.js"></script>
-<script src="./js/bootstrap-button.js"></script>
-<script src="./js/bootstrap-collapse.js"></script>
-<script src="./js/bootstrap-carousel.js"></script>
-<script src="./js/bootstrap-typeahead.js"></script>
+<script src="./ext-js/jquery.js"></script>
+<script src="./bootstrap/js/bootstrap.js"></script>
+<script src="./ext-js/jquery.smooth-scroll.js" type="text/javascript"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
 
@@ -215,12 +206,21 @@
             var $checkbox = $(this).parent().find(':checkbox');
             $checkbox.attr('checked', !$checkbox.attr('checked'));
         });
+        $('.special').click(function(event) {
+                event.preventDefault();
+                var link = this;
+                $.smoothScroll({
+                    scrollTarget: mydiv
+                });
+            $('.infoForm').removeClass("hidden");
+            $('.btn-primary').addClass("hidden");
 
+        });
         //Build the signup XHR
         $('form').submit(function() {
             var form_data = $(this).serialize();
 
-            $.post('bugsbounty.com', form_data, function(data) {
+            $.post('lp/user/add', form_data, function(data) {
                 $('.result').html(data);
             })
             .error( function() { console.log("no dice");});
