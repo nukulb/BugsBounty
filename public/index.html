@@ -123,7 +123,7 @@
                     </form>
                     <a class="btn btn-primary btn-large needjs">Learn more »</a>
                 </div>
-                <div class="span6 hero-unit hero-btn ">
+                <div id= "mydiv" class="span6 hero-unit hero-btn ">
                     <h1>Developer</h1>
                     <p>The average best selling app takes 743 hours of testing after development is finished. Are you ready to release?</p>
                     
@@ -175,6 +175,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="./ext-js/jquery.js"></script>
 <script src="./bootstrap/js/bootstrap.js"></script>
+<script src="./ext-js/jquery.smooth-scroll.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -205,7 +206,16 @@
             var $checkbox = $(this).parent().find(':checkbox');
             $checkbox.attr('checked', !$checkbox.attr('checked'));
         });
+        $('.special').click(function(event) {
+                event.preventDefault();
+                var link = this;
+                $.smoothScroll({
+                    scrollTarget: mydiv
+                });
+            $('.infoForm').removeClass("hidden");
+            $('.btn-primary').addClass("hidden");
 
+        });
         //Build the signup XHR
         $('form').submit(function() {
             var form_data = $(this).serialize();
