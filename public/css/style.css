@@ -10,6 +10,37 @@
 
     More info at: http://lesselements.com
 -----------------------------------------------------*/
+@media (min-width: 979px) {
+  body {
+    padding-top: 60px;
+  }
+}
+body {
+  background-color: #89CEDE;
+  padding-bottom: 40px;
+}
+.distribution img {
+  max-width: 100%;
+  border: 1px solid black;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.distribution p {
+  text-align: left;
+}
 .row input {
   margin-left: 20px;
 }
@@ -95,6 +126,9 @@
 @media (max-width: 767px) {
   .hero-btn {
     margin-bottom: 20px !important;
+  }
+  .distribution img {
+    max-width: 50%;
   }
 }
 .platform-picker {
