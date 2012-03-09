@@ -7,6 +7,9 @@ body {
 }
 
 .distribution {
+    h1 {
+		text-align: left;
+	}
     img {
         max-width: 100%;
         border: 1px solid black;
@@ -104,15 +107,17 @@ body {
     }
     .distribution {
         img {
-            max-width: 50%;
+            max-width: 100px;
+			float: left;
+			margin-right: 1em;
         }
 		p {
-		    text-align: center;
+		    text-align: left
+			float: left;
 		}
-		[class*="span"] {
-            display: inline-block;
-		    float: left;
-			max-width: 325px;
+		.span3 {
+		    display: table;
+			margin: 1em 0;
 		}
     }
 }
