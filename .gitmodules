@@ -1,0 +1,6 @@
+[submodule "dependencies/AutoMySQLBackup"]
+	path = dependencies/AutoMySQLBackup
+	url = http://github.com/rcruz/AutoMySQLBackup.git
+[submodule "dependencies/bootstrap"]
+	path = dependencies/bootstrap
+	url = http://github.com/nukulb/bootstrap.git 

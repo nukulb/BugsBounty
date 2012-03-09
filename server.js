@@ -1,45 +1,66 @@
-/*
-//creating a server without express
- var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(1337, "127.0.0.1");
-console.log('Server running at http://127.0.0.1:1337/');
-*/
+var _self, app;
 
-//creating a server with express.
-var express = require('express');
-var app = express.createServer();
+_self = {
+    start: function () {
+        //creating a server with express.
 
-app.get("/user/:id", function (req,res, next){
-    //lookup in database and send the :id back
-    //let us assume we only support positive natural numbers for id values , reasonable assumption
-    if(req.params.id < 1){
-        res.send('Looked up user ' + req.params.id);
-    } else {
-        //pass the baton to the next app.get so now "lets try /user/* method right below this method.
-        //basically that means that if you did not find an id, it would then go the next method.
-        next();
+        var express = require('express'),
+            expressValidator = require('express-validator'),
+            dataApi = require('./lib/data-api');
+        
+        app = express.createServer();
+        //setup a static server, make sure configure happens before you call req.body
+        app.configure(function () {
+            //app.use(express.methodOverride());
+            app.use(express.bodyParser());
+            app.use(expressValidator);
+            //this is all you have to setup a static server, the public folder is now exposed.
+            app.use(express.static(__dirname + '/public'));
+        });
+
+        app.get("/user/:id", function (req, res, next) {
+            //lookup in database and send the :id back
+            //let us assume we only support positive natural numbers for id values , reasonable assumption
+            if (req.params.id < 1) {
+                res.send('Looked up user ' + req.params.id);
+            } else {
+                //pass the baton to the next app.get so now "lets try /user/* method right below this method.
+                //basically that means that if you did not find an id, it would then go the next method.
+                next();
+            }
+        });
+        app.post("/lpUserAdd.html", function (req, res, next) {
+            var errors = dataApi.lpUserAdd(req, res);
+            if (errors.length) {
+                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                return;
+            }
+            res.redirect("/lpUserAdd.html");
+            //res.send("Success");
+
+        });
+
+        app.post("/lp/user/add", function (req, res, next) {
+            var errors = dataApi.lpUserAdd(req, res);
+            if (errors.length) {
+                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                return;
+            }
+            res.send("Success"); 
+
+        });
+
+        app.post("/", function (req, res, next) {
+            res.send("Error"); 
+        });
+
+        app.listen('3000');
+        console.log('Server running at http://127.0.0.1:3000/');
+    },
+    close: function () {
+        app.close();
+        //process.exit();
     }
-});
-
-app.get("/user/*", function (req, res, next) {
-    res.send("No such user was found.");
-});
-
-app.post('/', function(req, res){
-    res.send(req.body);
-});
-
-//setup a static server
-app.configure(function(){
-    app.use(express.methodOverride());
-    app.use(express.bodyParser());
-    //this is all you have to setup a static server, the public folder is now exposed.
-    app.use(express.static(__dirname + '/public'));
-});
-
-app.listen('80');
-console.log('Server running at http://127.0.0.1:80/');
+};
+module.exports = _self;
 

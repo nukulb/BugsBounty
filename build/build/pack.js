@@ -36,7 +36,8 @@ function _copyCmd(source, destination) {
             return 'cp -r ' + source + ' ' + unix_path;
         } else {
             return 'mkdir -p ' + unix_path + ' && ' +
-                   'cp -r ' + source + ' ' + unix_path;
+                   'cp -r ' + source + ' ' + unix_path + ' && ' + 
+                   'cp -fr '+ _c.DEPENDENCIES_BOOTSTRAP+'/bootstrap '+ _c.ROOT + 'public/';  
         }
     }
 }
