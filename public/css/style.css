@@ -13,6 +13,7 @@
 body {
   background-color: #89CEDE;
   padding-bottom: 40px;
+  color: #777;
 }
 .distribution h1 {
   text-align: left;
@@ -140,7 +141,7 @@ body {
   }
   .distribution p {
     text-align: left
-  			float: left;
+              float: left;
   }
   .distribution .span3 {
     display: table;
