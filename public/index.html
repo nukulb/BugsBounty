@@ -29,6 +29,8 @@
     </head>
 
     <body>
+    
+         
         
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
@@ -39,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">
+          <a class="brand" href="index.html">
             <img src="img/bbBanner.png">
             <!--<span style="font-size: 125%">&#0946;</span>UGS <span style="font-size: 125%">&#0946;</span>OUNTY-->
           </a>
@@ -158,10 +160,11 @@
                                 </li>
                                 <li>
                                     <a class="windows" href="#wp"><span></span>Windows Phone</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_wp" value="true">Windows Phone</label>
+                                    <label class="checkbox"><input type="checkbox" name="platform_windows" value="true">Windows Phone</label>
                                 </li>
                             </ul>
                         </div>
+                        
                         <div class="row">
                             <input type=submit class="btn-primary btn-large" value="Sign up, it's Free">
                         </div>
@@ -174,6 +177,18 @@
         <footer>
         <p>© Bugs Bounty 2012</p>
         </footer>
+        
+        <div class="modal hide fade in" id="myModal">
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">×</a>
+              <h2>Thanks for signing up!</h2>
+            </div>
+            <div class="modal-body">
+              <p>We will be launching this summer and you will have exclusive access to our beta this spring.</p>
+            </div>
+        </div>
+        
+   
 
     </div> <!-- /container -->
 
@@ -187,6 +202,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
 
+        //$('#myModal').modal('hide');
         //Remove anything the NEEDS js
         $(".needjs").removeClass("needjs");
 
@@ -226,9 +242,9 @@
         //Build the signup XHR
         $('form').submit(function() {
             var form_data = $(this).serialize();
-
+            var resultArea = $(this).siblings("h1");
             $.post('lp/user/add', form_data, function(data) {
-                $('.result').html(data);
+                $('#myModal').modal('show');
             })
             .error( function() { console.log("no dice");});
         

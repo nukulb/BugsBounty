@@ -10,11 +10,6 @@
 
     More info at: http://lesselements.com
 -----------------------------------------------------*/
-@media (min-width: 979px) {
-  body {
-    padding-top: 60px;
-  }
-}
 body {
   background-color: #89CEDE;
   padding-bottom: 40px;
@@ -123,6 +118,14 @@ body {
 .hero-unit {
   text-align: center;
 }
+.platform-picker {
+  margin-bottom: 10px;
+}
+@media (min-width: 979px) {
+  body {
+    padding-top: 60px;
+  }
+}
 @media (max-width: 767px) {
   .hero-btn {
     margin-bottom: 20px !important;
@@ -130,9 +133,14 @@ body {
   .distribution img {
     max-width: 50%;
   }
-}
-.platform-picker {
-  margin-bottom: 10px;
+  .distribution p {
+    text-align: center;
+  }
+  .distribution [class*="span"] {
+    display: inline-block;
+    float: left;
+    max-width: 325px;
+  }
 }
 @media (max-width: 980px) and (min-width: 768px), (max-width: 450px) {
   .platform-picker {
