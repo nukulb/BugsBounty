@@ -14,6 +14,9 @@ body {
   background-color: #89CEDE;
   padding-bottom: 40px;
 }
+.distribution h1 {
+  text-align: left;
+}
 .distribution img {
   max-width: 100%;
   border: 1px solid black;
@@ -131,15 +134,17 @@ body {
     margin-bottom: 20px !important;
   }
   .distribution img {
-    max-width: 50%;
+    max-width: 100px;
+    float: left;
+    margin-right: 1em;
   }
   .distribution p {
-    text-align: center;
+    text-align: left
+  			float: left;
   }
-  .distribution [class*="span"] {
-    display: inline-block;
-    float: left;
-    max-width: 325px;
+  .distribution .span3 {
+    display: table;
+    margin: 1em 0;
   }
 }
 @media (max-width: 980px) and (min-width: 768px), (max-width: 450px) {
