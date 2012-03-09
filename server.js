@@ -1,7 +1,7 @@
 var _self, app;
 
 _self = {
-    start: function () {
+    start: function (serverPort) {
         //creating a server with express.
 
         var express = require('express'),
@@ -54,8 +54,8 @@ _self = {
             res.send("Error"); 
         });
 
-        app.listen('3000');
-        console.log('Server running at http://127.0.0.1:3000/');
+        app.listen(serverPort);
+        console.log('Server running at http://127.0.0.1:' + serverPort + '/');
     },
     close: function () {
         app.close();
