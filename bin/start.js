@@ -1,1 +1,1 @@
-require("./../server").start(80);
+require("./../server").start(process.argv[2]);
