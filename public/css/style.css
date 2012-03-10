@@ -104,7 +104,6 @@ body {
 }
 /*Hero Upgrades*/
 .hero-btn {
-  cursor: pointer;
   padding: 15px 0 15px 0;
 }
 .hero-btn strong {
@@ -116,6 +115,9 @@ body {
 }
 .hero-unit {
   text-align: center;
+}
+.hero-unit h1 {
+  margin-bottom: .1em;
 }
 .platform-picker {
   margin-bottom: 10px;

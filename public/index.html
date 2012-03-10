@@ -36,7 +36,7 @@
                         <img src="img/bbBanner.png">
                     </a>
                     <div class="pull-right">
-                        <a href="#" class="btn btn-primary btn-large" >SIGN UP</span></a>
+                        <a href="#signUp" class="btn btn-primary btn-large" >SIGN UP</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="row center">
+            <div id="signUp" class="row center">
                 <div class="span6 hero-btn hero-unit">
                     <h1>Tester</h1>
                     <p><img class="heart" src="img/heart.png"> Apps? Get exclusive access to new applications.</p>
@@ -156,7 +156,7 @@
         <p>© Bugs Bounty 2012</p>
         </footer>
         
-        <div class="modal hide fade in" id="myModal">
+        <div class="modal hide fade in" id="successModal">
             <div class="modal-header">
               <a class="close" data-dismiss="modal">×</a>
               <h2>Thanks for signing up!</h2>
@@ -166,8 +166,16 @@
             </div>
         </div>
         
-   
-
+        <div class="modal hide fade in" id="errorModal">
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">×</a>
+              <h2>Oh no :(</h2>
+            </div>
+            <div class="modal-body">
+              <p>Something went wrong but that shouldn't stop you from joining Bugs Bounty.</p>
+              <p><a class="btn btn-primary btn-large pull-right" href="mailto:support@bugsbounty.com?subject=I%20want%20to%20join%20Bugs%20Bounty!">Click here</a></p>
+            </div>
+        </div>
     </div> <!-- /container -->
 
 <!-- Le javascript
@@ -207,7 +215,7 @@
             var $checkbox = $(this).parent().find(':checkbox');
             $checkbox.attr('checked', !$checkbox.attr('checked'));
         });
-        $('.special').click(function(event) {
+        $('a[href="#signUp"]').click(function(event) {
                 event.preventDefault();
                 var link = this;
                 $.smoothScroll({
@@ -224,7 +232,12 @@
             $.post('lp/user/add', form_data, function(data) {
                 $('#myModal').modal('show');
             })
-            .error( function() { console.log("no dice");});
+            .error( function() {
+                var mailLink = $('#errorModal > .modal-body a');
+                var ref = mailLink.attr('href');
+                mailLink.attr('href',ref+'&body=Send me!%0A%0A'+ form_data.replace(/&/g,"%0A"));
+                $('#errorModal').modal('show');
+            });
         
             //Prevent default form submission
             return false;
