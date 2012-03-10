@@ -49,6 +49,8 @@ body {
 }
 .brand h1 {
   color: #fff;
+  letter-spacing: 16px;
+  font-weight: normal;
 }
 .brand img {
   max-height: 80px;
