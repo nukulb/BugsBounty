@@ -13,6 +13,7 @@
 body {
   background-color: #89CEDE;
   padding-bottom: 40px;
+  color: #777;
 }
 .distribution h1 {
   text-align: left;
@@ -48,17 +49,14 @@ body {
 }
 .brand h1 {
   color: #fff;
+  letter-spacing: 16px;
+  font-weight: normal;
 }
 .brand img {
   max-height: 80px;
 }
 .nav a {
   font-size: 20px;
-}
-.special {
-  text-shadow: 0px 0px 0px #E9721A !important;
-  color: #E9721A !important;
-  text-transform: uppercase;
 }
 .heart {
   max-height: 1.3em;
@@ -108,7 +106,6 @@ body {
 }
 /*Hero Upgrades*/
 .hero-btn {
-  cursor: pointer;
   padding: 15px 0 15px 0;
 }
 .hero-btn strong {
@@ -120,6 +117,9 @@ body {
 }
 .hero-unit {
   text-align: center;
+}
+.hero-unit h1 {
+  margin-bottom: .1em;
 }
 .platform-picker {
   margin-bottom: 10px;
@@ -140,7 +140,7 @@ body {
   }
   .distribution p {
     text-align: left
-  			float: left;
+              float: left;
   }
   .distribution .span3 {
     display: table;
