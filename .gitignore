@@ -11,7 +11,7 @@ tags
 www/*
 target/
 .node-xmlhttprequest*
-hooks/
+bin/nohup.out
 
 # Numerous always-ignore extensions
 *.diff

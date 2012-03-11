@@ -46,3 +46,6 @@ http://dev.mysql.com/downloads/mysql/
 ##Linux
 coming soon
 
+##To start server on rackspace
+cd bin
+./start
