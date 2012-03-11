@@ -113,7 +113,7 @@
                 </div>
                 <div id= "mydiv" class="span6 hero-unit hero-btn ">
                     <h1>Developer</h1>
-                    <p>The average best selling app takes 743 hours of testing after development is finished. Are you ready to release?</p>
+                    <p>Are you working on an awesome app but need a some help testing it? The average best selling app takes 743 hours of testing after development is finished. Are you ready to release?</p>
                     <form  id="devInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
                         <input type="hidden" name="developer" value="developer">
                         <div class="row">
@@ -208,6 +208,7 @@
         $(".hero-btn").click(function(obj){
             $(this).children('form').removeClass("hidden");
             $(this).children('.btn-primary').addClass("hidden");
+            _gaq.push(['_trackEvent', 'Clicks', 'Learn More', $(this).children('h1').html()]);
         });
 
         //When a platform is picked, select it
@@ -218,19 +219,20 @@
             $checkbox.attr('checked', !$checkbox.attr('checked'));
         });
         $('a[href="#signUp"]').click(function(event) {
-                event.preventDefault();
-                var link = this;
-                $.smoothScroll({
-                    scrollTarget: mydiv
-                });
+            event.preventDefault();
+            var link = this;
+            $.smoothScroll({
+                scrollTarget: mydiv
+            });
             $('.infoForm').removeClass("hidden");
             $(".hero-btn").children('.btn-primary').addClass("hidden");
-
+            _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'nav-signup']);
         });
         //Build the signup XHR
         $('form').submit(function() {
             var form_data = $(this).serialize();
             var resultArea = $(this).siblings("h1");
+            _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'submit']);
             $.post('lp/user/add', form_data, function(data) {
                 $('#myModal').modal('show');
             })
