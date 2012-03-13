@@ -14,7 +14,7 @@
     "jWorkflow":"*",
     "express-validator": "*",
 	"mustache" : "*",
-    "emailjs": "*"
+    "mailer": "*"
   },
   "bundledDependencies": [
     "connect",
