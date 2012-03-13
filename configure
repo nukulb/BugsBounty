@@ -4,4 +4,4 @@ git submodule update --init
 cd dependencies/bootstrap/
 make bootstrap 
 cd ../..
-sudo npm install -g jake jshint@0.5.2 csslint uglify-js less
+sudo npm install -g jake jshint@0.5.2 csslint uglify-js less forever
