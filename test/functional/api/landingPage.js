@@ -7,7 +7,7 @@ describe("Server", function () {
     beforeEach(function () {
         spyOn(database, "query");
         spyOn(console, "log");
-        server.start();
+        server.start(3000);
     });
 
     afterEach(function () {

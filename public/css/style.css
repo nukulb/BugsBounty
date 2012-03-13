@@ -151,7 +151,6 @@ textarea {
   .distribution p {
     text-align: left
               float: left;
-    text-shadow: 2px 2px #ccc;
   }
   .distribution .span3 {
     display: table;
