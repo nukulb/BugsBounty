@@ -6,7 +6,8 @@ _self = {
 
         var express = require('express'),
             expressValidator = require('express-validator'),
-            dataApi = require('./lib/data-api');
+            dataApi = require('./lib/data-api'),
+            handlebars = require('handlebars');
         
         app = express.createServer();
         //setup a static server, make sure configure happens before you call req.body
@@ -18,17 +19,14 @@ _self = {
             app.use(express.static(__dirname + '/public'));
         });
 
-        app.get("/user/:id", function (req, res, next) {
-            //lookup in database and send the :id back
-            //let us assume we only support positive natural numbers for id values , reasonable assumption
-            if (req.params.id < 1) {
-                res.send('Looked up user ' + req.params.id);
-            } else {
-                //pass the baton to the next app.get so now "lets try /user/* method right below this method.
-                //basically that means that if you did not find an id, it would then go the next method.
-                next();
-            }
+        app.get("/example", function (req, res, next) {
+            var context = {title: "My New Post", body: "Jason"};
+            var template = handlebars.compile(require('./templates/example').data);
+            var html = template(context);
+           
+            res.send(html);
         });
+
         app.post("/lpUserAdd.html", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
             if (errors.length) {
@@ -49,6 +47,7 @@ _self = {
             res.send("Success"); 
 
         });
+        
 
         app.post("/", function (req, res, next) {
             res.send("Error"); 
