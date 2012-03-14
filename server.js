@@ -51,7 +51,8 @@ _self = {
                 res.send('There have been validation errors: ' + errors.join(', '), 500);
                 return;
             }
-            res.redirect("/lpUserAdd.html");
+            
+            res.render('lpUserAdd.html', require('./templates/templates.js'));
             //res.send("Success");
 
         });
