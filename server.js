@@ -22,7 +22,7 @@ _self = {
             app.register('.html', tmpl); 
         });
 
-        app.get('/index.html', function(req, res){
+        app.get('/index.html', function (req, res) {
             res.render('index.html', require('./templates/templates.js'));
         });
 
@@ -51,10 +51,10 @@ _self = {
         app.listen(serverPort);
         console.log('Server running at http://127.0.0.1:' + serverPort + '/');
     },
-        close: function () {
-            app.close();
-            //process.exit();
-        }
+    close: function () {
+        app.close();
+        //process.exit();
+    }
 };
 module.exports = _self;
 
