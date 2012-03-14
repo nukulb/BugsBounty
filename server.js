@@ -43,7 +43,10 @@ _self = {
             }
             res.send("Success"); 
         });
-
+        
+        app.get("/", function (req, res, next) {
+            res.render('index.html', require('./templates/templates.js'));
+        });
         app.post("/", function (req, res, next) {
             res.send("Error"); 
         });
