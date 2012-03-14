@@ -7,7 +7,7 @@ function _getCmd() {
     if (utils.isWindows()) {
         return "don't have time to write windows build scripts, why the hell are you on windows??"; 
     } else {
-        return "cp -fr "+ _c.DEPENDENCIES_BOOTSTRAP+"/bootstrap "+ _c.ROOT + "public/";   
+        return "cp -fr " + _c.DEPENDENCIES_BOOTSTRAP + "/bootstrap " + _c.ROOT + "public/";   
     }
 }
 

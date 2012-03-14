@@ -12,7 +12,8 @@
     "jasmine-node": "1.0.7",
     "mysql": "*",
     "jWorkflow":"*",
-    "express-validator": "*"
+    "express-validator": "*",
+    "mustache" : "*"
   },
   "bundledDependencies": [
     "connect",
