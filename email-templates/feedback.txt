@@ -1,0 +1,13 @@
+<html>
+<body>
+Hi Team,
+<br/>
+<p>
+{{text}}
+</p>
+<br/>
+From
+<br/>
+{{name}}
+</body>
+</html>
