@@ -74,6 +74,9 @@ textarea {
 .hero-unit {
   padding: 4%;
 }
+.hero-unit p {
+  font-size: 21px;
+}
 .carousel {
   margin-bottom: 0;
 }

@@ -42,76 +42,16 @@
         <div class="container">
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <div id="myDistribution" class="distribution">
-                    <h1>How it works</h1>
-                    <div class="row-fluid">
-                        <div class="span3">
-                            <div>
-                                <img src="img/distribution1.png">
-                            </div>
-                            <div>
-                                <p>Select proven community members to test your app to help speed things up.</p>
-                            </div>
-                        </div>
-                        <div class="span3">
-                            <img src="img/distribution2.png">
-                            <p>A testing community will help you get fast feedback.</p>
-                        </div>
-                        <div class="span3">
-                            <img src="img/distribution3.png">
-                            <p>Reward your best testers from the community.</p>
-                        </div>
-                        <div class="span3">
-                            <img src="img/distribution4.png">
-                            <p>The Bugs Bounty community can help you release top quality apps faster.</p>
-                        </div>
-                    </div>
+                <div>
+                    <h1>Get Quality Feedback On Your App</h1>
+                    <p>Cross Platform. Community Driven. Reward Based Testing.</p>
                 </div>
             </div>
 
             <div id="signUp" class="row center">
-                <div class="span6 hero-btn hero-unit">
-                    <h1>Tester</h1>
-                    <p><img class="heart" src="img/heart.png"> Apps? Get exclusive access to new applications.</p>
-                    
-                    <form  id="testerInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
-                        <input type="hidden" name="tester" value="tester">
-                        <div class="row">
-                            <input type=name name=name placeholder="Name">
-                        </div>
-                        <div class="row center">
-                            <input type=email name=email placeholder="Email" required>
-                        </div>
-                        <div class="platform-picker clearfix">
-                            <ul class="button-picker-nojs">
-                                <li>
-                                    <a class="ios" href="#ios"><span></span>iOS</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
-                                </li>
-                                <li>
-                                    <a class="android" href="#android"><span></span>Android</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
-                                </li>
-                                <li>
-                                    <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
-                                </li>
-                                <li>
-                                    <a class="windows" href="#wp"><span></span>Windows Phone</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_windows" value="true">Windows Phone</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="row">
-                            <input type=submit class="btn-primary btn-large" value="Sign up, it's Free">
-                        </div>
-                        <!--<input type=submit value="Sign up"> -->
-                    </form>
-                    <a class="btn btn-primary btn-large needjs">Learn more »</a>
-                </div>
-                <div id= "mydiv" class="span6 hero-unit hero-btn ">
+                <div id= "mydiv" class="offset2 span8 hero-unit hero-btn ">
                     <h1>Developer</h1>
-                    <p>Are you working on an awesome app but need a some help testing it? The average best selling app takes 743 hours of testing after development is finished. Are you ready to release?</p>
+                    <p>Are you working on an awesome app but need a some help testing it?</p>
                     <form  id="devInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
                         <input type="hidden" name="developer" value="developer">
                         <div class="row">
@@ -144,7 +84,6 @@
                             <input type=submit class="btn-primary btn-large" value="Sign up, it's Free">
                         </div>
                     </form>
-                    <a class="btn btn-primary btn-large needjs">Learn more »</a>
                 </div>
             </div>
         <hr>
@@ -199,14 +138,11 @@
         $(".platform-picker a").removeClass("hidden");
         $(".platform-picker label").addClass("hidden");
 
-        //Hide the forms
-        $("form").addClass("hidden");
-
         //Show the form when any of the area is clicked
         $(".hero-btn").click(function(obj){
             $(this).children('form').removeClass("hidden");
             $(this).children('.btn-primary').addClass("hidden");
-            _gaq.push(['_trackEvent', 'Clicks', 'Learn More', $(this).children('h1').html()]);
+            _gaq.push(['_trackEvent', 'Clicks', 'Signup', $(this).children('h1').html()]);
         });
 
         //When a platform is picked, select it
