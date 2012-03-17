@@ -44,48 +44,46 @@
             <div class="hero-unit">
                 <div>
                     <h1>Get Quality Feedback On Your App</h1>
-                    <p>Cross Platform. Community Driven. Reward Based Testing.</p>
+                    <h2>Cross Platform. Community Driven. Reward Based Testing.</h2>
                 </div>
-            </div>
+                <div id="signUp" class="row center">
+                    <div id= "mydiv" class="offset2 span8 hero-unit hero-btn ">
+                        <form  id="devInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
+                            <input type="hidden" name="developer" value="developer">
+                            <div class="row">
+                                <input type=name name=name placeholder="Name" required>
+                                <input type=email name=email placeholder="Email" required>
+                            </div>
+                            <div class="row">
+                            </div>
+                            <div class="platform-picker clearfix">
+                                <ul class="button-picker-nojs">
+                                    <li>
+                                    <a class="ios" href="#ios"><span></span>iOS</a>
+                                    <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
+                                    </li>
+                                    <li>
+                                    <a class="android" href="#android"><span></span>Android</a>
+                                    <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
+                                    </li>
+                                    <li>
+                                    <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
+                                    <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
+                                    </li>
+                                    <li>
+                                    <a class="windows" href="#wp"><span></span>Windows Phone</a>
+                                    <label class="checkbox"><input type="checkbox" name="platform_windows" value="true">Windows Phone</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <input type=submit class="btn-primary btn-large" value="Sign up">
+                            </div>
+                        </form>
+                    </div>
+            </div></div>
 
-            <div id="signUp" class="row center">
-                <div id= "mydiv" class="offset2 span8 hero-unit hero-btn ">
-                    <h2>Developer</h2>
-                    <p>Are you working on an awesome app but need a some help testing it?</p>
-                    <form  id="devInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
-                        <input type="hidden" name="developer" value="developer">
-                        <div class="row">
-                            <input type=name name=name placeholder="Name">
-                        </div>
-                        <div class="row">
-                            <input type=email name=email placeholder="Email" required>
-                        </div>
-                        <div class="platform-picker clearfix">
-                            <ul class="button-picker-nojs">
-                                <li>
-                                <a class="ios" href="#ios"><span></span>iOS</a>
-                                <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
-                                </li>
-                                <li>
-                                <a class="android" href="#android"><span></span>Android</a>
-                                <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
-                                </li>
-                                <li>
-                                <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
-                                <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
-                                </li>
-                                <li>
-                                <a class="windows" href="#wp"><span></span>Windows Phone</a>
-                                <label class="checkbox"><input type="checkbox" name="platform_windows" value="true">Windows Phone</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="row">
-                            <input type=submit class="btn-primary btn-large" value="Sign up">
-                        </div>
-                    </form>
-                </div>
-            </div>
+
             <div class="row-fluid">
                 <div class="span12 hero-unit hero-btn">
                     <h1>Features</h1> 

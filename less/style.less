@@ -6,25 +6,13 @@ body {
     padding-bottom: 40px;
     color: #777;
     padding-top: 60px;
+    //background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAQElEQVQYlaXOMQEAIAwDwW9dVAwyqhIZiEFGmMpGFzLmMsQkURlzC2BlWHXe4Zhb3iGAd7gyzDsEsK+Td/BCgAMHXjDXZUwBKQAAAABJRU5ErkJggg==);
+    //background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAANklEQVQImW2OyQ0AIAzDMPvvbB6oogf9RUmdoK44QJXQuxuAxcwfOcDVD5VJqKOrYHvXGPQLHMvcKAf42X0/AAAAAElFTkSuQmCC);
 }
 
 input, textarea { color: #000; }
 .placeholder { color: #aaa; }
 
-.distribution {
-    h1 {
-        text-align: left;
-        text-shadow: 2px 2px #ccc;
-    }
-    img {
-        max-width: 100%;
-        border: 1px solid black;
-        .border-radius(5px, 5px, 5px, 5px);
-    }
-    p {
-        text-align: left;
-    }
-}
 
 .row input {
     margin-left: 20px;
@@ -57,13 +45,6 @@ input, textarea { color: #000; }
     max-height: 1.3em;
 }
 
-.hero-unit {
-    padding: 4%;
-    p {
-        font-size: 21px;
-    }
-}
-
 .carousel {
     margin-bottom: 0;
 }
@@ -79,6 +60,14 @@ input, textarea { color: #000; }
         .border-radius(5px, 5px, 0, 0);
     }
 }
+
+#signUp {
+    margin-top: 10em;
+    .hero-btn {
+        background: #DDD;
+    }
+}
+
 
 /*Hero Upgrades*/
 
@@ -96,11 +85,9 @@ input, textarea { color: #000; }
 
         h1, h2, h3, h4 {
             text-transform: capitalize;
-            float: inherit;
             text-align: inherit;
         }
         li {
-            float: left;
             text-align: left;
             width: 100%;
         }
@@ -108,10 +95,29 @@ input, textarea { color: #000; }
 }
 
 .hero-unit {
+    padding: 4%;
     text-align: center;
-	h1 {
+    border: 1px solid black;
+    p {
+        font-size: 21px;
+    }
+    h1 {
+        font-size: 4em;
 	    margin-bottom: .1em;
-	}
+    }
+    h2 {
+        color: #777;
+        font-weight: normal;
+    }
+    h3 {
+        font-size: 27px;
+    }
+    h1, h2, h3, h4 {
+        font-variant: small-caps;
+    }
+    form {
+        margin: 0;
+    }
 }
 
 .platform-picker {

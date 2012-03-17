@@ -23,32 +23,6 @@ textarea {
 .placeholder {
   color: #aaa;
 }
-.distribution h1 {
-  text-align: left;
-  text-shadow: 2px 2px #ccc;
-}
-.distribution img {
-  max-width: 100%;
-  border: 1px solid black;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-topleft: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.distribution p {
-  text-align: left;
-}
 .row input {
   margin-left: 20px;
 }
@@ -70,12 +44,6 @@ textarea {
 }
 .heart {
   max-height: 1.3em;
-}
-.hero-unit {
-  padding: 4%;
-}
-.hero-unit p {
-  font-size: 21px;
 }
 .carousel {
   margin-bottom: 0;
@@ -117,6 +85,12 @@ textarea {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+#signUp {
+  margin-top: 10em;
+}
+#signUp .hero-btn {
+  background: #DDD;
+}
 /*Hero Upgrades*/
 .hero-btn {
   padding: 15px 0 15px 0;
@@ -136,19 +110,39 @@ textarea {
 .hero-btn ol h3,
 .hero-btn ol h4 {
   text-transform: capitalize;
-  float: inherit;
   text-align: inherit;
 }
 .hero-btn ol li {
-  float: left;
   text-align: left;
   width: 100%;
 }
 .hero-unit {
+  padding: 4%;
   text-align: center;
+  border: 1px solid black;
+}
+.hero-unit p {
+  font-size: 21px;
 }
 .hero-unit h1 {
+  font-size: 4em;
   margin-bottom: .1em;
+}
+.hero-unit h2 {
+  color: #777;
+  font-weight: normal;
+}
+.hero-unit h3 {
+  font-size: 27px;
+}
+.hero-unit h1,
+.hero-unit h2,
+.hero-unit h3,
+.hero-unit h4 {
+  font-variant: small-caps;
+}
+.hero-unit form {
+  margin: 0;
 }
 .platform-picker {
   margin-bottom: 10px;
