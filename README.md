@@ -44,7 +44,7 @@ http://dev.mysql.com/downloads/mysql/
 ##Linux
 coming soon
 ## To start the server locally
-node bin/start.js3000
+node bin/start.js:3000
 ##To start server on rackspace
 cd bin
 ./start
