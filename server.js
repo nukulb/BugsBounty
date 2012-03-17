@@ -44,6 +44,16 @@ _self = {
             res.send("Success"); 
 
         });
+        
+        app.post("/feedback", function (req, res, next) {
+            var errors = email.feedbackEmail(req, res);
+            if (errors.length) {
+                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                return;
+            }
+            res.send("Success"); 
+
+        });
 
         app.post("/lp/user/add", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
@@ -53,7 +63,7 @@ _self = {
             }
             res.send("Success"); 
         });
-        
+
         app.get("/", function (req, res, next) {
             res.render('index.html', require('./templates/templates.js'));
         });

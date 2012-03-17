@@ -1,13 +1,13 @@
 <html>
 <body>
-Hi Team,
-<br/>
-<p>
-{{text}}
-</p>
-<br/>
-From
-<br/>
-{{name}}
-</body>
-</html>
+Hello Team,
+<br/><br/>
+        Congratulations, someone took the time to write some feedback.
+        ------
+        {{text}}
+        ------
+        from 
+        {{name}} 
+<br/></br>
+
+--Node mailer says Hi
