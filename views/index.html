@@ -16,7 +16,7 @@
         <style type="text/css">
 
         </style>
-        
+
         <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
@@ -33,12 +33,12 @@
                 <div class="container">
                     {{> logo}}
                     <div class="pull-right">
-                        <a href="#signUp" class="btn btn-primary btn-large" >SIGN UP</a>
+                        <a href="#signUp" class="btn btn-primary btn-large" >Not a developer?</a>
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <div class="container">
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
@@ -50,7 +50,7 @@
 
             <div id="signUp" class="row center">
                 <div id= "mydiv" class="offset2 span8 hero-unit hero-btn ">
-                    <h1>Developer</h1>
+                    <h2>Developer</h2>
                     <p>Are you working on an awesome app but need a some help testing it?</p>
                     <form  id="devInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
                         <input type="hidden" name="developer" value="developer">
@@ -63,124 +63,140 @@
                         <div class="platform-picker clearfix">
                             <ul class="button-picker-nojs">
                                 <li>
-                                    <a class="ios" href="#ios"><span></span>iOS</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
+                                <a class="ios" href="#ios"><span></span>iOS</a>
+                                <label class="checkbox"><input type="checkbox" name="platform_ios" value="true">iOS</label>
                                 </li>
                                 <li>
-                                    <a class="android" href="#android"><span></span>Android</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
+                                <a class="android" href="#android"><span></span>Android</a>
+                                <label class="checkbox"><input type="checkbox" name="platform_android" value="true">Android</label>
                                 </li>
                                 <li>
-                                    <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
+                                <a class="blackberry" href="#blackberry"><span></span>Blackberry</a>
+                                <label class="checkbox"><input type="checkbox" name="platform_blackberry" value="true">BlackBerry</label>
                                 </li>
                                 <li>
-                                    <a class="windows" href="#wp"><span></span>Windows Phone</a>
-                                    <label class="checkbox"><input type="checkbox" name="platform_windows" value="true">Windows Phone</label>
+                                <a class="windows" href="#wp"><span></span>Windows Phone</a>
+                                <label class="checkbox"><input type="checkbox" name="platform_windows" value="true">Windows Phone</label>
                                 </li>
                             </ul>
                         </div>
                         <div class="row">
-                            <input type=submit class="btn-primary btn-large" value="Sign up, it's Free">
+                            <input type=submit class="btn-primary btn-large" value="Sign up">
                         </div>
                     </form>
                 </div>
             </div>
+            <div class="row-fluid">
+                <div class="span12 hero-unit hero-btn">
+                    <h1>Features</h1> 
+                    <div class="row-fluid">
+                        <!--<div class="span6"> -->
+                    <ol>
+                        {{#features}}
+                        <li>
+                        <h3>{{heading}}</h3>
+                        <p>{{text}}</p>
+                        </li>
+                        {{/features}}
+                    </ol>
+                    <!-- </div> -->
+            </div>
+        </div>
         <hr>
 
         <footer>
         <p>© Bugs Bounty 2012</p>
         </footer>
-        
+
         <div class="modal hide fade in" id="successModal">
             <div class="modal-header">
-              <a class="close" data-dismiss="modal">×</a>
-              <h2>Thanks for signing up!</h2>
+                <a class="close" data-dismiss="modal">×</a>
+                <h2>Thanks for signing up!</h2>
             </div>
             <div class="modal-body">
-              <p>We will be launching this summer and you will have exclusive access to our beta this spring.</p>
+                <p>We will be launching this summer and you will have exclusive access to our beta this spring.</p>
             </div>
         </div>
-        
+
         <div class="modal hide fade in" id="errorModal">
             <div class="modal-header">
-              <a class="close" data-dismiss="modal">×</a>
-              <h2>Oh no :(</h2>
+                <a class="close" data-dismiss="modal">×</a>
+                <h2>Oh no :(</h2>
             </div>
             <div class="modal-body">
-              <p>Something went wrong but that shouldn't stop you from joining Bugs Bounty.</p>
-              <p><a class="btn btn-primary btn-large pull-right" href="mailto:support@bugsbounty.com?subject=I%20want%20to%20join%20Bugs%20Bounty!">Click here</a></p>
+                <p>Something went wrong but that shouldn't stop you from joining Bugs Bounty.</p>
+                <p><a class="btn btn-primary btn-large pull-right" href="mailto:support@bugsbounty.com?subject=I%20want%20to%20join%20Bugs%20Bounty!">Click here</a></p>
             </div>
         </div>
     </div> <!-- /container -->
 
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="./ext-js/jquery.js"></script>
-<script src="./bootstrap/js/bootstrap.js"></script>
-<script src="./ext-js/jquery.smooth-scroll.js" type="text/javascript"></script>
-<script src="./ext-js/jquery.placeholder.min.js" type="text/javascript"></script>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./ext-js/jquery.js"></script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+    <script src="./ext-js/jquery.smooth-scroll.js" type="text/javascript"></script>
+    <script src="./ext-js/jquery.placeholder.min.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
+    <script type="text/javascript">
+        $(document).ready(function() {
 
-        //Fixing the placeholder text for old browsers
-        $('input, textarea').placeholder();
+            //Fixing the placeholder text for old browsers
+            $('input, textarea').placeholder();
 
-        //Remove anything the NEEDS js
-        $(".needjs").removeClass("needjs");
+            //Remove anything the NEEDS js
+            $(".needjs").removeClass("needjs");
 
-        //Swaping the no-js version for the js version
-        $(".button-picker-nojs").addClass("button-picker").removeClass("button-picker-nojs");
+            //Swaping the no-js version for the js version
+            $(".button-picker-nojs").addClass("button-picker").removeClass("button-picker-nojs");
 
-        //Show the js platform picker and hide the no-js version
-        $(".platform-picker a").removeClass("hidden");
-        $(".platform-picker label").addClass("hidden");
+            //Show the js platform picker and hide the no-js version
+            $(".platform-picker a").removeClass("hidden");
+            $(".platform-picker label").addClass("hidden");
 
-        //Show the form when any of the area is clicked
-        $(".hero-btn").click(function(obj){
-            $(this).children('form').removeClass("hidden");
-            $(this).children('.btn-primary').addClass("hidden");
-            _gaq.push(['_trackEvent', 'Clicks', 'Signup', $(this).children('h1').html()]);
-        });
+            //Show the form when any of the area is clicked
+            $(".hero-btn").click(function(obj){
+                $(this).children('form').removeClass("hidden");
+                $(this).children('.btn-primary').addClass("hidden");
+                _gaq.push(['_trackEvent', 'Clicks', 'Signup', $(this).children('h1').html()]);
+                });
 
-        //When a platform is picked, select it
-        $(".button-picker li a").click(function(obj){
-            $(this).toggleClass("selected");
-            //Select the appropriate checkbox
-            var $checkbox = $(this).parent().find(':checkbox');
-            $checkbox.attr('checked', !$checkbox.attr('checked'));
-        });
-        $('a[href="#signUp"]').click(function(event) {
-            event.preventDefault();
-            var link = this;
-            $.smoothScroll({
-                scrollTarget: mydiv
-            });
-            $('.infoForm').removeClass("hidden");
-            $(".hero-btn").children('.btn-primary').addClass("hidden");
-            _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'nav-signup']);
-        });
-        //Build the signup XHR
-        $('form').submit(function() {
-            var form_data = $(this).serialize();
-            var resultArea = $(this).siblings("h1");
-            _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'submit']);
-            $.post('lp/user/add', form_data, function(data) {
-                $('#successModal').modal('show');
+            //When a platform is picked, select it
+            $(".button-picker li a").click(function(obj){
+                    $(this).toggleClass("selected");
+                    //Select the appropriate checkbox
+                    var $checkbox = $(this).parent().find(':checkbox');
+                    $checkbox.attr('checked', !$checkbox.attr('checked'));
+                    });
+            $('a[href="#signUp"]').click(function(event) {
+                    event.preventDefault();
+                    var link = this;
+                    $.smoothScroll({
+                        scrollTarget: mydiv
+                    });
+                    $('.infoForm').removeClass("hidden");
+                    $(".hero-btn").children('.btn-primary').addClass("hidden");
+                    _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'nav-signup']);
+                    });
+//Build the signup XHR
+$('form').submit(function() {
+        var form_data = $(this).serialize();
+        var resultArea = $(this).siblings("h1");
+        _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'submit']);
+        $.post('lp/user/add', form_data, function(data) {
+            $('#successModal').modal('show');
             })
-            .error( function() {
-                var mailLink = $('#errorModal > .modal-body a');
-                var ref = mailLink.attr('href');
-                mailLink.attr('href',ref+'&body=Send me!%0A%0A'+ form_data.replace(/&/g,"%0A"));
-                $('#errorModal').modal('show');
+        .error( function() {
+            var mailLink = $('#errorModal > .modal-body a');
+            var ref = mailLink.attr('href');
+            mailLink.attr('href',ref+'&body=Send me!%0A%0A'+ form_data.replace(/&/g,"%0A"));
+            $('#errorModal').modal('show');
             });
-        
-            //Prevent default form submission
-            return false;
+
+        //Prevent default form submission
+        return false;
         });
-    });
+});
 </script>
 
 {{> analytics}}

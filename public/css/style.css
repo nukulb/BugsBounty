@@ -128,6 +128,17 @@ textarea {
   color: black;
   padding: 0 5%;
 }
+.hero-btn li {
+  list-style-type: none;
+  float: left;
+  text-align: left;
+}
+.hero-btn li h1,
+.hero-btn li h2,
+.hero-btn li h3,
+.hero-btn li h4 {
+  text-transform: capitalize;
+}
 .hero-unit {
   text-align: center;
 }
