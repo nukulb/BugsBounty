@@ -7,7 +7,8 @@ _self = {
         var express = require('express'),
             expressValidator = require('express-validator'),
             dataApi = require('./lib/data-api'),
-            tmpl = require('./lib/tmpl');
+			tmpl = require('./lib/tmpl'),
+            email = require('./lib/email-api');
         
         app = express.createServer();
         //setup a static server, make sure configure happens before you call req.body
@@ -34,6 +35,25 @@ _self = {
             }
             res.render('lpUserAdd.html', require('./templates/templates.js'));
         });
+        app.post("/email", function (req, res, next) {
+            var errors = email.sendEmail(req, res);
+            if (errors.length) {
+                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                return;
+            }
+            res.send("Success"); 
+
+        });
+        
+        app.post("/feedback", function (req, res, next) {
+            var errors = email.feedbackEmail(req, res);
+            if (errors.length) {
+                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                return;
+            }
+            res.send("Success"); 
+
+        });
 
         app.post("/lp/user/add", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
@@ -43,7 +63,7 @@ _self = {
             }
             res.send("Success"); 
         });
-        
+
         app.get("/", function (req, res, next) {
             res.render('index.html', require('./templates/templates.js'));
         });

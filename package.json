@@ -13,7 +13,8 @@
     "mysql": "*",
     "jWorkflow":"*",
     "express-validator": "*",
-    "mustache" : "*"
+	"mustache" : "*",
+    "mailer": "*"
   },
   "bundledDependencies": [
     "connect",
