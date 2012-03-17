@@ -128,16 +128,21 @@ textarea {
   color: black;
   padding: 0 5%;
 }
-.hero-btn li {
+.hero-btn ol {
   list-style-type: none;
+}
+.hero-btn ol h1,
+.hero-btn ol h2,
+.hero-btn ol h3,
+.hero-btn ol h4 {
+  text-transform: capitalize;
+  float: inherit;
+  text-align: inherit;
+}
+.hero-btn ol li {
   float: left;
   text-align: left;
-}
-.hero-btn li h1,
-.hero-btn li h2,
-.hero-btn li h3,
-.hero-btn li h4 {
-  text-transform: capitalize;
+  width: 100%;
 }
 .hero-unit {
   text-align: center;
