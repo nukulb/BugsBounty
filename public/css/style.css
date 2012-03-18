@@ -85,14 +85,61 @@ textarea {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-#signUp {
+#signup {
   margin-top: 10em;
+  background: #DDD;
+  padding-top: 0;
 }
-#signUp .hero-btn {
-  border: none;
+.master-mind {
+  background-color: whiteSmoke;
+  padding-top: 4%;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: 3em;
 }
-#signUp .hero-unit {
-  border: none;
+.master-mind form {
+  padding-top: 2em;
+  margin: 0;
+}
+.master-mind ol {
+  list-style-type: none;
+}
+.master-mind ol h1,
+.master-mind ol h2,
+.master-mind ol h3,
+.master-mind ol h4 {
+  text-transform: capitalize;
+  text-align: inherit;
+}
+.master-mind ol li {
+  text-align: left;
+  width: 100%;
+}
+.master-mind p {
+  font-size: 21px;
+}
+.master-mind h1 {
+  font-size: 4em;
+  margin-bottom: .5em;
+}
+.master-mind h2 {
+  color: #777;
+  font-weight: normal;
+}
+.master-mind h3 {
+  font-size: 27px;
+}
+.master-mind h1,
+.master-mind h2,
+.master-mind h3,
+.master-mind h4 {
+  font-variant: small-caps;
 }
 /*Hero Upgrades*/
 .hero-btn {
@@ -105,47 +152,9 @@ textarea {
   color: black;
   padding: 0 5%;
 }
-.hero-btn ol {
-  list-style-type: none;
-}
-.hero-btn ol h1,
-.hero-btn ol h2,
-.hero-btn ol h3,
-.hero-btn ol h4 {
-  text-transform: capitalize;
-  text-align: inherit;
-}
-.hero-btn ol li {
-  text-align: left;
-  width: 100%;
-}
 .hero-unit {
-  padding: 4%;
   text-align: center;
   border: 1px solid black;
-}
-.hero-unit p {
-  font-size: 21px;
-}
-.hero-unit h1 {
-  font-size: 4em;
-  margin-bottom: .1em;
-}
-.hero-unit h2 {
-  color: #777;
-  font-weight: normal;
-}
-.hero-unit h3 {
-  font-size: 27px;
-}
-.hero-unit h1,
-.hero-unit h2,
-.hero-unit h3,
-.hero-unit h4 {
-  font-variant: small-caps;
-}
-.hero-unit form {
-  margin: 0;
 }
 .platform-picker {
   margin-bottom: 10px;
