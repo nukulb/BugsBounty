@@ -86,10 +86,15 @@ textarea {
   background-clip: padding-box;
 }
 #signup {
-  margin-top: 10em;
+  margin-top: 1em;
   background: #DDD;
+  padding-bottom: 0;
   padding-top: 0;
   border: 1px solid black;
+  padding-bottom: 0;
+}
+#features {
+  padding-bottom: 4%;
 }
 .master-mind {
   background-color: whiteSmoke;
@@ -119,6 +124,7 @@ textarea {
 }
 .master-mind ol li {
   text-align: left;
+  margin-bottom: 2em;
   width: 100%;
 }
 .master-mind p {
