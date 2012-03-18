@@ -8,7 +8,9 @@ _self = {
             expressValidator = require('express-validator'),
             dataApi = require('./lib/data-api'),
 			tmpl = require('./lib/tmpl'),
-            email = require('./lib/email-api');
+            email = require('./lib/email-api'),
+            utils = require('./lib/utils'),
+            globalTmpl = require('./templates/global');
         
         app = express.createServer();
         //setup a static server, make sure configure happens before you call req.body
@@ -23,10 +25,6 @@ _self = {
             app.register('.html', tmpl); 
         });
 
-        app.get('/index.html', function (req, res) {
-            res.render('index.html', require('./templates/templates.js'));
-        });
-
         app.post("/lpUserAdd.html", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
             if (errors.length) {
@@ -34,15 +32,6 @@ _self = {
                 return;
             }
             res.render('lpUserAdd.html', require('./templates/templates.js'));
-        });
-        app.post("/email", function (req, res, next) {
-            var errors = email.sendEmail(req, res);
-            if (errors.length) {
-                res.send('There have been validation errors: ' + errors.join(', '), 500);
-                return;
-            }
-            res.send("Success"); 
-
         });
         
         app.post("/feedback", function (req, res, next) {
@@ -64,11 +53,38 @@ _self = {
             res.send("Success"); 
         });
 
-        app.get("/", function (req, res, next) {
-            res.render('index.html', require('./templates/templates.js'));
+        app.get("/*:page?", function (req, res, next) {
+            var page = req.params.page,
+                pageTmpl, tmpl;
+            if (page.substr(page.length - 5) === '.html') { 
+                pageTmpl = require('./templates/' + page.replace('.html', '.js'));
+                tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
+                res.render(page, tmpl);
+            } else {
+                next();
+            }
         });
+        
+        app.get("/", function (req, res, next) {
+            var pageTmpl = require('./templates/index.js'),
+                tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
+            res.render('index.html', tmpl);
+        });
+        
+        app.post("/*:page?", function (req, res, next) {
+            var page = req.params.page,
+                pageTmpl, tmpl;
+            if (page.substr(page.length - 5) === '.html') { 
+                pageTmpl = require('./templates/' + page.replace('.html', '.js'));
+                tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
+                res.render(page, tmpl);
+            } else {
+                next();
+            }
+        });
+
         app.post("/", function (req, res, next) {
-            res.send("Error"); 
+           // res.send("Error"); 
         });
 
         app.listen(serverPort);

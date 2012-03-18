@@ -1,5 +1,3 @@
-var server; 
-
 describe("template engine", function () {
 
     var tmpl = require("../../../lib/tmpl");
