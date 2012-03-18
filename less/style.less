@@ -6,25 +6,13 @@ body {
     padding-bottom: 40px;
     color: #777;
     padding-top: 60px;
+    //background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAQElEQVQYlaXOMQEAIAwDwW9dVAwyqhIZiEFGmMpGFzLmMsQkURlzC2BlWHXe4Zhb3iGAd7gyzDsEsK+Td/BCgAMHXjDXZUwBKQAAAABJRU5ErkJggg==);
+    //background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAANklEQVQImW2OyQ0AIAzDMPvvbB6oogf9RUmdoK44QJXQuxuAxcwfOcDVD5VJqKOrYHvXGPQLHMvcKAf42X0/AAAAAElFTkSuQmCC);
 }
 
 input, textarea { color: #000; }
 .placeholder { color: #aaa; }
 
-.distribution {
-    h1 {
-        text-align: left;
-        text-shadow: 2px 2px #ccc;
-    }
-    img {
-        max-width: 100%;
-        border: 1px solid black;
-        .border-radius(5px, 5px, 5px, 5px);
-    }
-    p {
-        text-align: left;
-    }
-}
 
 .row input {
     margin-left: 20px;
@@ -57,10 +45,6 @@ input, textarea { color: #000; }
     max-height: 1.3em;
 }
 
-.hero-unit {
-    padding: 4%;
-}
-
 .carousel {
     margin-bottom: 0;
 }
@@ -77,6 +61,69 @@ input, textarea { color: #000; }
     }
 }
 
+#signup {
+    margin-top: 1em;
+    background: #DDD;
+    padding-bottom: 0;
+    padding-top: 0;
+    border: 1px solid black;
+    padding-bottom: 0;
+}
+
+#features {
+    padding-bottom: 4%;
+}
+.master-mind {
+    background-color: whiteSmoke;
+    padding-top: 4%;
+    .rounded(6px);
+    text-align: center;
+    margin-bottom: 3em;
+    form {
+        padding-top: 2em;
+        margin: 0;
+    }
+    label {
+        color: #777;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    ol {
+        list-style-type: none;
+
+        h1, h2, h3, h4 {
+            text-transform: capitalize;
+            text-align: inherit;
+        }
+        li {
+            text-align: left;
+            margin-bottom: 2em;
+            width: 100%;
+            p {
+                padding: 4% 5%;
+            }
+        }
+    }
+    p {
+        font-size: 21px;
+    }
+    h1 {
+        font-size: 4em;
+	    margin-bottom: .5em;
+        line-height: 1em;
+    }
+    h2 {
+        color: #777;
+        font-weight: normal;
+    }
+    h3 {
+        font-size: 27px;
+    }
+    h1, h2, h3, h4 {
+        font-variant: small-caps;
+    }
+}
+
 /*Hero Upgrades*/
 
 .hero-btn {
@@ -88,13 +135,12 @@ input, textarea { color: #000; }
         color: black;
         padding: 0 5%;
     }
+
 }
 
 .hero-unit {
     text-align: center;
-	h1 {
-	    margin-bottom: .1em;
-	}
+    border: 1px solid black;
 }
 
 .platform-picker {
