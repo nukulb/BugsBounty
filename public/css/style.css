@@ -127,6 +127,9 @@ textarea {
   margin-bottom: 2em;
   width: 100%;
 }
+.master-mind ol li p {
+  padding: 0 5%;
+}
 .master-mind p {
   font-size: 21px;
 }
