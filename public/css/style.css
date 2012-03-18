@@ -112,6 +112,11 @@ textarea {
   padding-top: 2em;
   margin: 0;
 }
+.master-mind label {
+  color: #777;
+  font-size: 20px;
+  font-weight: bold;
+}
 .master-mind ol {
   list-style-type: none;
 }
