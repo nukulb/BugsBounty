@@ -4,7 +4,7 @@ module.exports  = {
     },
     partials: {
         logo :  "<a class='brand' href='index.html'><h1>{{title}}</h1></a>",
-        analytics : "<script type=\"text/javascript\">"+
+        analytics : "<script type=\"text/javascript\">" +
             "var _gaq = _gaq || [];" +
             "_gaq.push(['_setAccount', 'UA-29133127-1']);" +
             "_gaq.push(['_trackPageview']);" +
