@@ -89,7 +89,10 @@ textarea {
   margin-top: 10em;
 }
 #signUp .hero-btn {
-  background: #DDD;
+  border: none;
+}
+#signUp .hero-unit {
+  border: none;
 }
 /*Hero Upgrades*/
 .hero-btn {
