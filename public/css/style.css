@@ -23,32 +23,6 @@ textarea {
 .placeholder {
   color: #aaa;
 }
-.distribution h1 {
-  text-align: left;
-  text-shadow: 2px 2px #ccc;
-}
-.distribution img {
-  max-width: 100%;
-  border: 1px solid black;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-topleft: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.distribution p {
-  text-align: left;
-}
 .row input {
   margin-left: 20px;
 }
@@ -70,9 +44,6 @@ textarea {
 }
 .heart {
   max-height: 1.3em;
-}
-.hero-unit {
-  padding: 4%;
 }
 .carousel {
   margin-bottom: 0;
@@ -114,6 +85,77 @@ textarea {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+#signup {
+  margin-top: 1em;
+  background: #DDD;
+  padding-bottom: 0;
+  padding-top: 0;
+  border: 1px solid black;
+  padding-bottom: 0;
+}
+#features {
+  padding-bottom: 4%;
+}
+.master-mind {
+  background-color: whiteSmoke;
+  padding-top: 4%;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  text-align: center;
+  margin-bottom: 3em;
+}
+.master-mind form {
+  padding-top: 2em;
+  margin: 0;
+}
+.master-mind label {
+  color: #777;
+  font-size: 20px;
+  font-weight: bold;
+}
+.master-mind ol {
+  list-style-type: none;
+}
+.master-mind ol h1,
+.master-mind ol h2,
+.master-mind ol h3,
+.master-mind ol h4 {
+  text-transform: capitalize;
+  text-align: inherit;
+}
+.master-mind ol li {
+  text-align: left;
+  margin-bottom: 2em;
+  width: 100%;
+}
+.master-mind ol li p {
+  padding: 4% 5%;
+}
+.master-mind p {
+  font-size: 21px;
+}
+.master-mind h1 {
+  font-size: 4em;
+  margin-bottom: .5em;
+  line-height: 1em;
+}
+.master-mind h2 {
+  color: #777;
+  font-weight: normal;
+}
+.master-mind h3 {
+  font-size: 27px;
+}
+.master-mind h1,
+.master-mind h2,
+.master-mind h3,
+.master-mind h4 {
+  font-variant: small-caps;
+}
 /*Hero Upgrades*/
 .hero-btn {
   padding: 15px 0 15px 0;
@@ -127,9 +169,7 @@ textarea {
 }
 .hero-unit {
   text-align: center;
-}
-.hero-unit h1 {
-  margin-bottom: .1em;
+  border: 1px solid black;
 }
 .platform-picker {
   margin-bottom: 10px;
