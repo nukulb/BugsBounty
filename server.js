@@ -10,7 +10,8 @@ _self = {
 			tmpl = require('./lib/tmpl'),
             email = require('./lib/email-api'),
             utils = require('./lib/utils'),
-            globalTmpl = require('./templates/global');
+            globalTmpl = require('./templates/global'),
+            path = require('path');
         
         app = express.createServer();
         //setup a static server, make sure configure happens before you call req.body
@@ -31,7 +32,7 @@ _self = {
                 res.send('There have been validation errors: ' + errors.join(', '), 500);
                 return;
             }
-            res.render('lpUserAdd.html', require('./templates/templates.js'));
+            next();
         });
         
         app.post("/feedback", function (req, res, next) {
@@ -55,9 +56,14 @@ _self = {
 
         app.get("/*:page?", function (req, res, next) {
             var page = req.params.page,
-                pageTmpl, tmpl;
+                pageTmpl, tmpl, tmplPath;
             if (page.substr(page.length - 5) === '.html') { 
-                pageTmpl = require('./templates/' + page.replace('.html', '.js'));
+                tmplPath = './templates/' + page.replace('.html', '.js');
+                if (path.existsSync(tmplPath)) {
+                    pageTmpl = require(tmplPath);
+                } else {
+                    pageTmpl = {locals: {}, partials: {}};
+                }
                 tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
                 res.render(page, tmpl);
             } else {
@@ -73,9 +79,14 @@ _self = {
         
         app.post("/*:page?", function (req, res, next) {
             var page = req.params.page,
-                pageTmpl, tmpl;
+                pageTmpl, tmpl, tmplPath;
             if (page.substr(page.length - 5) === '.html') { 
-                pageTmpl = require('./templates/' + page.replace('.html', '.js'));
+                tmplPath = './templates/' + page.replace('.html', '.js');
+                if (path.existsSync(tmplPath)) {
+                    pageTmpl = require(tmplPath);
+                } else {
+                    pageTmpl = {locals: {}, partials: {}};
+                }
                 tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
                 res.render(page, tmpl);
             } else {
