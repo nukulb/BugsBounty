@@ -1,7 +1,7 @@
 module.exports  = {
     locals: {
         "title": "Bugs Bounty",
-        "features":{
+        "features": {
             "set1": [
                 {
                     "heading": "Invite testers",
@@ -48,7 +48,28 @@ module.exports  = {
                 "uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/xY5ESqhEyHX1Pd4h9UQ1Q.js';" +
                 "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);" +
             "})();" +
-            "</script>"
+            "</script>",
+        platforms :
+            "<div class='platform-picker clearfix'>" +
+                "<ul class='button-picker-nojs'>" +
+                    "<li>" +
+                        "<a class='ios' href='#ios'><span></span>iOS</a>" +
+                        "<label class='checkbox'><input type='checkbox' name='platform_ios' value='true'>iOS</label>" +
+                    "</li>" +
+                    "<li>" +
+                        "<a class='android' href='#android'><span></span>Android</a>" +
+                        "<label class='checkbox'><input type='checkbox' name='platform_android' value='true'>Android</label>" +
+                    "</li>" +
+                    "<li>" +
+                        "<a class='blackberry' href='#blackberry'><span></span>Blackberry</a>" +
+                        "<label class='checkbox'><input type='checkbox' name='platform_blackberry' value='true'>BlackBerry</label>" +
+                    "</li>" +
+                    "<li>" +
+                        "<a class='windows' href='#wp'><span></span>Windows Phone</a>" +
+                        "<label class='checkbox'><input type='checkbox' name='platform_windows' value='true'>Windows Phone</label>" +
+                    "</li>" +
+                "</ul>" +
+            "</div>"
 
     },
 };
