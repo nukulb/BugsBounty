@@ -4,7 +4,7 @@ module.exports  = {
         testerFeatures: {
             "set1": [
                 {
-                    "heading": "Get exclusive access",
+                    "heading": "Get free exclusive access",
                     "text": "You will get early access to the newest apps"
                 },
                 {
