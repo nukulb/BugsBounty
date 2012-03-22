@@ -19,5 +19,8 @@ module.exports  = {
                 },
             ]
         }
+    },
+    partials: {
+        otherRole:"<li><a href='/'>Developer?</a></li>"
     }
 };

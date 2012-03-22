@@ -29,6 +29,23 @@ module.exports  = {
         }
     },
     partials: {
+        navbar:  
+        "<div class='navbar navbar-fixed-top'>" +
+            "<div class='navbar-inner'>" +
+                "<div class='container'>" +
+                    "{{> logo}}" +
+                    "<div class='nav-collapse'>" +
+                        "<ul class='nav pull-right'>" +
+                            "<li><a href='#'>About</a></li>" +
+                            "<li><a href='http://blog.bugsbounty.com'>Blog</a></li>" +
+                            "<li class='divider-vertical'></li>" +
+                            "{{> otherRole}}" +
+                            "</ul>" +
+                    "</div>" +
+                "</div>" +
+            "</div>" +
+        "</div>",
+
         logo :  "<a class='brand' href='index.html'><h1>{{title}}</h1></a>",
         analytics : "<script type=\"text/javascript\">" +
             "var _gaq = _gaq || [];" +
