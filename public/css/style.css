@@ -156,6 +156,17 @@ textarea {
 .master-mind h4 {
   font-variant: small-caps;
 }
+.evil-genius {
+  padding-top: 0.5em;
+}
+.evil-genius2 {
+  padding-top: 1em;
+  background-color: #9abcc4;
+  padding-bottom: 1em;
+}
+.evil-genius2 .evil-genius {
+  margin-bottom: 0;
+}
 /*Hero Upgrades*/
 .hero-btn {
   padding: 15px 0 15px 0;

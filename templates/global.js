@@ -29,6 +29,7 @@ module.exports  = {
         }
     },
     partials: {
+        otherRole:"<li><a href='/tester.html'>Not a Developer?</a></li>",
         navbar:  
         "<div class='navbar navbar-fixed-top'>" +
             "<div class='navbar-inner'>" +
