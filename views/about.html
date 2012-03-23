@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta charset="utf-8">
-        <title>bugs bounty</title>
+        <title>{{title}}</title>
         <meta name="description" content="">
         <meta name="author" content="">
 
@@ -37,25 +37,22 @@
                     <div class="row">
                         <div class="span6">
                             <ol>
+                                {{#about.set1}}
                                 <li>
-                                    <h3>Opportunity</h3>
-                                    <p>The world mobile application market is expected to grow from $25 billion by 2015. In a crowded market the only way to differentiate your app is to provide top quality with an intuitive user experience. The fragmentaton in the mobile market makes it cumbersome for developers.</p>
+                                <h3>{{heading}}</h3>
+                                <p>{{text}}</p>
                                 </li>
-                                <li>
-                                    <h3>Community</h3>
-                                    <p>There is a growing community of early adopters that will help developers test their apps and provide invaluable feedback.</p>
-                                </li>
+                                {{/about.set1}}
                             </ol>
-                        </div>
-                        <div class="span6">
+                        </div> 
+                            <div class="span6">
                             <ol>
+                                {{#about.set2}}
                                 <li>
-                                    <h3>Platform</h3>
-                                    <p>We will provide online tools and cross-platform SDKs to help developers deploy their apps to their target audience and get realtime feedback from the community.</p>
-                                </li><li>
-                                    <h3>Team</h3>
-                                    <p>We are a bunch of web and mobile developers that feel testing mobile apps in a fragmented and fast evolving market poses unique challenges. We have set a lofty goal for ourselves to make it easy for developers to find testers, deploy apps, collect feedback and iterate on their product.<a href='/'>Sign up</a> here do that we can find the testing solution that best fits your needs.</p>
+                                <h3>{{heading}}</h3>
+                                <p>{{{text}}}</p>
                                 </li>
+                                {{/about.set2}}
                             </ol>
                         </div>
                     </div>
