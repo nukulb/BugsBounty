@@ -1,5 +1,18 @@
 Run ./configure 
 or if you know what you are doing you can just run "npm install". ./configure is necessary the first time.
+##Setting up the databse Mongodb
+1. Use http://www.mongodb.org/display/DOCS/Quickstart to install mongodb
+2. On one terminal call mongod to start the server on localhost.
+3. On the second terminal call mongo to connect to the server
+        mongo
+        > db.foo.save( { a : 1 } )
+        > db.foo.find()
+4. If this worked then shut the second terminal out and it means mongo is installed.
+5. Now start the bugsbounty node server and sign up.
+6. You should now be able to see your entered details in the database. Access it like this from the terminal-
+mongo
+> use mydb
+> db.users.find() 
 
 ##Setting up the database MySQL
 This is done to determine if you are running node in production or development environment.

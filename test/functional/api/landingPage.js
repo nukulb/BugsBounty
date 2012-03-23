@@ -5,7 +5,7 @@ describe("Server", function () {
         server = require('./../../../server');
     
     beforeEach(function () {
-        spyOn(database, "query");
+        spyOn(database.users, "save");
         spyOn(console, "log");
         server.start(3000);
     });
@@ -23,13 +23,9 @@ describe("Server", function () {
             xhr.send(JSON.stringify({name: "John Smith", email: "john@smith.com"}));
         });
         
-        waitsFor(function () {
-                return !!xhr.responseText;
-            }, "Error message if you don't make it here", 3000000); 
-        
+        waits(250); 
         runs(function () {
-            expect(xhr.responseText).toEqual('Success');
-            expect(database.query).toHaveBeenCalled();
+            expect(database.users.save).toHaveBeenCalled();
         });
     });
     
