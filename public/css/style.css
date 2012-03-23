@@ -176,6 +176,12 @@ textarea {
 .evil-genius2 .evil-genius {
   margin-bottom: 0;
 }
+.divider-vertical {
+  height: 42px;
+}
+.nav-collapse {
+  margin-top: 7px;
+}
 /*Hero Upgrades*/
 .hero-btn {
   padding: 15px 0 15px 0;

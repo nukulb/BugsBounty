@@ -34,10 +34,16 @@ module.exports  = {
         "<div class='navbar navbar-fixed-top'>" +
             "<div class='navbar-inner'>" +
                 "<div class='container'>" +
+                    "<!-- .btn-navbar is used as the toggle for collapsed navbar content -->" +
+                        "<a class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>" +
+                            "<span class='icon-bar'></span>" +
+                            "<span class='icon-bar'></span>" +
+                            "<span class='icon-bar'></span>" +
+                        "</a>" +
                     "{{> logo}}" +
                     "<div class='nav-collapse'>" +
                         "<ul class='nav pull-right'>" +
-                            "<li><a href='#'>About</a></li>" +
+                            "<li><a href='about.html'>About</a></li>" +
                             "<li><a href='http://blog.bugsbounty.com'>Blog</a></li>" +
                             "<li class='divider-vertical'></li>" +
                             "{{> otherRole}}" +
@@ -47,7 +53,7 @@ module.exports  = {
             "</div>" +
         "</div>",
 
-        logo :  "<a class='brand' href='index.html'><h1>{{title}}</h1></a>",
+        logo :  "<a class='brand' href='/'><h1>{{title}}</h1></a>",
         analytics : "<script type=\"text/javascript\">" +
             "var _gaq = _gaq || [];" +
             "_gaq.push(['_setAccount', 'UA-29133127-1']);" +
