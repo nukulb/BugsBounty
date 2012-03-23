@@ -21,6 +21,6 @@ module.exports  = {
         }
     },
     partials: {
-        otherRole:"<li><a href='/'>Developer?</a></li>"
+        otherRole: "<li><a href='/'>Developer?</a></li>"
     }
 };

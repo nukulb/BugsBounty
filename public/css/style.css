@@ -88,11 +88,6 @@ textarea {
 .aboutUs {
   margin-top: 1em;
 }
-.aboutUs h1 {
-  letter-spacing: -0.1em;
-  font-size: 4.5em;
-  padding-bottom: .5em;
-}
 #signup {
   margin-top: 1em;
   background: #DDD;
@@ -203,11 +198,6 @@ textarea {
 @media (max-width: 979px) {
   body {
     padding-top: inherit;
-  }
-}
-@media (max-width: 979px) and (min-width: 768px) {
-  .aboutUs h1 {
-    margin-left: -0.5em;
   }
 }
 @media (max-width: 767px) {

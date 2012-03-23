@@ -3,6 +3,6 @@ module.exports  = {
         title: "Bugs Bounty"
     },
     partials: {
-        otherRole:"<li><a href='/tester.html'>Not a Developer?</a></li>"
+        otherRole: "<li><a href='/tester.html'>Not a Developer?</a></li>"
     }
 };

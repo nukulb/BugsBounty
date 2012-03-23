@@ -16,7 +16,7 @@
         <style type="text/css">
 
         </style>
-        
+
         <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
@@ -28,65 +28,65 @@
     </head>
 
     <body>
-        
+
         {{> navbar}}
         <div class="container">
             <div class="row aboutUs">
-                <div class="span3">
-                    <h1>Opportunity</h1>
-                </div>
-                <div class="span9 evil-genius master-mind">
-                    <p> The world mobile application market is expected to grow from $25 billion by 2015. 
-                    In a crowded market the only way to differentiate your app is to provide top quality with
-                    an intuitive user experience. The fragmentaton in the mobile market makes it cumbersome for developers.
-                    </p>
+                <div class="span12 master-mind">
+                    <h1>About Us</h1>
+                    <div class="row">
+                        <div class="span6">
+                            <ol>
+                                <li>
+                                    <h3>Opportunity</h3>
+                                    <p>The world mobile application market is expected to grow from $25 billion by 2015. In a crowded market the only way to differentiate your app is to provide top quality with an intuitive user experience. The fragmentaton in the mobile market makes it cumbersome for developers.</p>
+                                </li>
+                                <li>
+                                    <h3>Community</h3>
+                                    <p>There is a growing community of early adopters that will help developers test their apps and provide invaluable feedback.</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="span6">
+                            <ol>
+                                <li>
+                                    <h3>Platform</h3>
+                                    <p>We will provide online tools and cross-platform SDKs to help developers deploy their apps to their target audience and get realtime feedback from the community.</p>
+                                </li><li>
+                                    <h3>Team</h3>
+                                    <p>We are a bunch of web and mobile developers that feel testing mobile apps in a fragmented and fast evolving market poses unique challenges. We have set a lofty goal for ourselves to make it easy for developers to find testers, deploy apps, collect feedback and iterate on their product.<a href='/'>Sign up</a> here do that we can find the testing solution that best fits your needs.</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="span6">
+                            <ol>
+                                {{#aboutUs.set2}}
+                                <li>
+                                <h3>{{heading}}</h3>
+                                <p>{{text}}</p>
+                                </li>
+                                {{/aboutUs.set2}}
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row aboutUs">
-                <div class="span3">
-                    <h1>Community</h1>
-                </div>
-                <div class="span9 evil-genius master-mind">
-                    <p>There is a growing community of early adopters that will help developers test their apps and provide invaluable feedback. </p>
-                </div>
-            </div>
-            <div class="row aboutUs">
-                <div class="span3">
-                    <h1>Platform</h1>
-                </div>
-                <div class="span9 evil-genius master-mind">
-                    <p>We will provide online tools and cross-platform SDKs to help developers 
-                    deploy their apps to their target audience and get realtime feedback from the community.</p>
-                </div>
-            </div>
-            <div class="row aboutUs">
-                <div class="span3">
-                    <h1>Team</h1>
-                </div>
-                <div class="span9 evil-genius master-mind">
-                    <p>We are a bunch of web and mobile developers that feel testing mobile apps in a 
-                    fragmented and fast evolving market poses unique challenges. We have set a lofty goal for ourselves to make it
-                    easy for developers to find testers, deploy apps, collect feedback adn iterate on their product.<a href="/">Sign up</a> here do that we can find the 
-                  testing solution that best fits your needs.  </p>
-                </div>
-            </div>
-         </div>
-        <hr>
+            <hr>
 
-        <footer>
-        <p>© Bugs Bounty 2012</p>
-        </footer>
+            <footer>
+            <p>© Bugs Bounty 2012</p>
+            </footer>
 
-    </div> <!-- /container -->
+        </div> <!-- /container -->
 
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="./ext-js/jquery.js"></script>
-<script src="./bootstrap/js/bootstrap.js"></script>
-<script src="./ext-js/jquery.smooth-scroll.js" type="text/javascript"></script>
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="./ext-js/jquery.js"></script>
+        <script src="./bootstrap/js/bootstrap.js"></script>
+        <script src="./ext-js/jquery.smooth-scroll.js" type="text/javascript"></script>
 
-{{> analytics}}
-{{> feedback}}
+        {{> analytics}}
+        {{> feedback}}
 
 </body></html>
