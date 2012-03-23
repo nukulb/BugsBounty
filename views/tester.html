@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>{{title}}</title>
+        <title>{{title}} - User Signup</title>
         <meta name="description" content="">
         <meta name="author" content="">
 
@@ -30,14 +30,14 @@
         {{> navbar}}
         <div class="container">
             <!-- Main hero unit for a primary marketing message or call to action -->
-            <div class="row" style="text-align: center;">
-                <div class="span12 master-mind">
-                    <h1>Get Quality Feedback On Your App</h1>
+            <div class="row" style="margin-top: 3em;" >
+                <div class="span8 master-mind">
+                    <h1>Get Apps. Get Rewards.</h1>
                     <h2>Cross Platform. Community Driven. Reward Based Testing.</h2>
                     <div class="row">
-                        <div id="signup" class="offset3 span6 master-mind">
+                        <div id="signup" class="offset1 span6 master-mind">
                             <form  id="devInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
-                                <input type="hidden" name="developer" value="developer">
+                                <input type="hidden" name="tester" value="tester">
                                 <div class="row">
                                     <input type=name name=name placeholder="Name" required>
                                     <input type=email name=email placeholder="Email" required>
@@ -53,32 +53,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div id="features" class="span12 master-mind">
+                <div class="span4 master-mind">
                     <h1>Features</h1>
-                    <div class="row">
-                        <div class="span6">
-                            <ol>
-                                {{#features.set1}}
-                                <li>
-                                <h3>{{heading}}</h3>
-                                <p>{{text}}</p>
-                                </li>
-                                {{/features.set1}}
-                            </ol>
-                        </div>
-                        <div class="span6">
-                            <ol>
-                                {{#features.set2}}
-                                <li>
-                                <h3>{{heading}}</h3>
-                                <p>{{text}}</p>
-                                </li>
-                                {{/features.set2}}
-                            </ol>
-                        </div>
-                    </div>
+                    <ol>
+                        {{#testerFeatures.set1}}
+                        <li>
+                        <h3>{{heading}}</h3>
+                        <p>{{text}}</p>
+                        </li>
+                        {{/testerFeatures.set1}}
+                        {{#testerFeatures.set2}}
+                        <li>
+                        <h3>{{heading}}</h3>
+                        <p>{{text}}</p>
+                        </li>
+                        {{/testerFeatures.set2}}
+                    </ol>
                 </div>
             </div>
             <hr>
