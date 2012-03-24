@@ -32,3 +32,6 @@ task('lint', [], function () {
 
 desc("show various codebase stats");
 task('stats', [], require('./build/stats'));
+
+desc("build and start server");
+task("start", [], require('./build/start'));
