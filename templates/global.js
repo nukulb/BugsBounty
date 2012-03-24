@@ -3,8 +3,8 @@ module.exports  = {
         "title": "Bugs Bounty",
         signup: {
             success: {
-                title: "Thanks for signing up!",
-                body: "We will be launching this summer and you will have exclusive access to our beta this spring."
+                title: "Thanks!",
+                body: "We'll send you an invite as soon as we can. In the meantime, checkout our <a href='http://blog.bugsbounty.com'>blog</a>"
             },
             fail: {
                 title: ">Oh no :(",
