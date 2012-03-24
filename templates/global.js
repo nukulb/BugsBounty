@@ -10,7 +10,11 @@ module.exports  = {
                 title: ">Oh no :(",
                 body: "Something went wrong but that shouldn't stop you from joining Bugs Bounty."
             }
-        }
+        },
+        metaInfo: "<meta name='description' content='Bugs Bounty provides a cross-platform, community driven and reward based testing platform for getting feedback on your mobile applications. It allows developers to find quality testers, set their price, distribute mobile apps, collect real-time feedback and reward testers all from a simple intuitive web based interface.' />" +
+            "<meta name='keywords' content='Mobile, Testing, cross platform, rewards, quality, ios, android, blackberry, windows phone, real-time, feedback' />" +
+            "<meta name='author' content='Bugs Bounty'" +
+            "<meta name='robots' content='index, follow' /> "
     },
     partials: {
         otherRole: "<li><a href='/tester.html'>Not a Developer?</a></li>",
