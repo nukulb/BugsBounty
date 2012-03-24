@@ -1,6 +1,17 @@
 module.exports  = {
     locals: {
-        "title": "Bugs Bounty"
+        "title": "Bugs Bounty",
+        signup: {
+            success: {
+                title: "Thanks for signing up!",
+                body: "We will be launching this summer and you will have exclusive access to our beta this spring."
+            },
+            fail: {
+                title: ">Oh no :(",
+                body: "Something went wrong but that shouldn't stop you from joining Bugs Bounty."
+            }
+        }
+
     },
     partials: {
         otherRole: "<li><a href='/tester.html'>Not a Developer?</a></li>",
