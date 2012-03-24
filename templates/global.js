@@ -11,7 +11,6 @@ module.exports  = {
                 body: "Something went wrong but that shouldn't stop you from joining Bugs Bounty."
             }
         }
-
     },
     partials: {
         otherRole: "<li><a href='/tester.html'>Not a Developer?</a></li>",
