@@ -25,18 +25,11 @@ module.exports = function (prev, baton) {
     baton.take();
 
     childProcess.exec(_getCmd(), function (error, stdout, stderr) {
-        
-        
-        util.print(stdout);
-        util.print(stderr);
-        
         if (error) {
             console.log(stdout);
             console.log(stderr);
             baton.pass(error.code);
         } else {
-            console.log(stdout);
-            console.log(stderr);
             baton.pass(prev);
         }
     });
