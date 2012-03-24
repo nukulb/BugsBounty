@@ -32,9 +32,9 @@ textarea {
 }
 .brand h1 {
   color: #fff;
-  letter-spacing: 16px;
   font-weight: normal;
   text-shadow: 1px 1px #ccc;
+  font-variant: small-caps;
 }
 .brand img {
   max-height: 80px;
@@ -110,6 +110,9 @@ textarea {
   background-clip: padding-box;
   text-align: center;
   margin-bottom: 3em;
+  -webkit-box-shadow: 2px 2px 10px #000000;
+  -moz-box-shadow: 2px 2px 10px #000000;
+  box-shadow: 2px 2px 10px #000000;
 }
 .master-mind form {
   padding-top: 2em;
@@ -137,6 +140,9 @@ textarea {
 }
 .master-mind ol li p {
   padding: 4% 5%;
+}
+.master-mind ol li label {
+  font-weight: normal;
 }
 .master-mind p {
   font-size: 21px;
@@ -194,6 +200,10 @@ textarea {
 }
 .platform-picker {
   margin-bottom: 10px;
+}
+.platform-picker label {
+  font-weight: normal;
+  font-size: 13px;
 }
 @media (max-width: 979px) {
   body {

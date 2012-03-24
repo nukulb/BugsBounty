@@ -26,9 +26,9 @@ input, textarea { color: #000; }
 .brand {
     h1 {
         color: #fff;
-        letter-spacing:16px;
         font-weight: normal;
         text-shadow: 1px 1px #ccc;
+        font-variant: small-caps;
     }
     img {
         max-height: 80px;
@@ -83,6 +83,7 @@ input, textarea { color: #000; }
     .rounded(6px);
     text-align: center;
     margin-bottom: 3em;
+    .drop-shadow(2px, 2px, 10px, 1);
     form {
         padding-top: 2em;
         margin: 0;
@@ -105,6 +106,9 @@ input, textarea { color: #000; }
             width: 100%;
             p {
                 padding: 4% 5%;
+            }
+            label {
+                font-weight: normal;
             }
         }
     }
@@ -169,6 +173,10 @@ input, textarea { color: #000; }
 
 .platform-picker {
     margin-bottom:10px;
+    label {
+        font-weight: normal;
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 979px) {
