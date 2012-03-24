@@ -1,31 +1,15 @@
 module.exports  = {
     locals: {
         "title": "Bugs Bounty",
-        "features": {
-            "set1": [
-                {
-                    "heading": "Invite testers",
-                    "text": "We know it's tough to find quality testers, let us find them for you."
-                },
-                {
-                    "heading": "Set your bounty",
-                    "text": "Entice your testers with rewards of your choice."
-                },
-                {
-                    "heading": "Distribute your app",
-                    "text": "Deploy your app easily over the air to any platform."
-                }
-            ],
-            "set2": [
-                {
-                    "heading": "Get top quality feedback",
-                    "text": "Receive responses from the community on any aspect of your app."
-                },
-                {
-                    "heading": "Distribute rewards",
-                    "text": "It's important to reward awesome people, show your appreciation."
-                }
-            ]
+        signup: {
+            success: {
+                title: "Thanks!",
+                body: "We'll send you an invite as soon as we can. In the meantime, checkout our <a href='http://blog.bugsbounty.com'>blog</a>."
+            },
+            fail: {
+                title: ">Oh no :(",
+                body: "Something went wrong but that shouldn't stop you from joining Bugs Bounty."
+            }
         }
     },
     partials: {
