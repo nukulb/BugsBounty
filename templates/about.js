@@ -4,7 +4,7 @@ module.exports = {
         about: {
             set1: [{
                 heading: "Opportunity",
-                text: "The world mobile application market is expected to grow from $25 billion by 2015. In a crowded market the only way to differentiate your app is to provide top quality with an intuitive user experience. The fragmentaton in the mobile market makes it cumbersome for developers to test their products accross all platforms."
+                text: "The world mobile application market is expected to grow from $25 billion by 2015. In a crowded market the only way to differentiate your app is to provide top quality with an intuitive user experience. The fragmentation in the mobile market makes it cumbersome for developers to test their products across all platforms."
             },
             { 
                 heading: "Community",
