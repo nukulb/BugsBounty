@@ -34,9 +34,4 @@ desc("show various codebase stats");
 task('stats', [], require('./build/stats'));
 
 desc("build and start server");
-task("start", ['default'], function(params) {
-    var cmds = ['node ./bin/start.js 3000'];
-    jake.exec(cmds, function() {
-        complete();
-    }, {stdout: true});
-}, {async: true});
+task("start", [], require('./build/start'));
