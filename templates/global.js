@@ -4,7 +4,7 @@ module.exports  = {
         signup: {
             success: {
                 title: "Thanks!",
-                body: "We'll send you an invite as soon as we can. In the meantime, checkout our <a href='http://blog.bugsbounty.com'>blog</a>"
+                body: "We'll send you an invite as soon as we can. In the meantime, checkout our <a href='http://blog.bugsbounty.com'>blog</a>."
             },
             fail: {
                 title: ">Oh no :(",
