@@ -70,6 +70,7 @@ _self = {
                     pageTmpl = {locals: {}, partials: {}};
                 }
                 tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
+                tmpl = utils.mergeTemplateData(tmpl, {locals: { session: req.session }, partials: {}});
                 res.render(page, tmpl);
             } else {
                 next();
