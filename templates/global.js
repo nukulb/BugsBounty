@@ -4,7 +4,7 @@ module.exports  = {
         signup: {
             success: {
                 title: "Thanks!",
-                body: "We'll send you an invite as soon as we can. In the meantime, checkout our <a href='http://blog.bugsbounty.com'>blog</a>."
+                body: "We'll send you an invite as soon as we can. In the meantime, check out our <a href='http://blog.bugsbounty.com'>blog</a>."
             },
             fail: {
                 title: ">Oh no :(",
@@ -72,7 +72,7 @@ module.exports  = {
                         "<label class='checkbox'><input type='checkbox' name='platform_android' value='true'>Android</label>" +
                     "</li>" +
                     "<li>" +
-                        "<a class='blackberry' href='#blackberry'><span></span>Blackberry</a>" +
+                        "<a class='blackberry' href='#blackberry'><span></span>BlackBerry</a>" +
                         "<label class='checkbox'><input type='checkbox' name='platform_blackberry' value='true'>BlackBerry</label>" +
                     "</li>" +
                     "<li>" +
