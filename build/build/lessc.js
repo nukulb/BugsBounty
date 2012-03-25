@@ -8,9 +8,9 @@ function _getCmd() {
         return "don't have time to write windows build scripts, why the hell are you on windows??"; 
     } else {
         console.log(
-                "make -f " + _c.DEPENDENCIES_BOOTSTRAP+"/Makefile bootstrap ");
-        return "lessc "+ _c.ROOT + "less/style.less >" + _c.ROOT + "public/css/style.css && "+
-                "make -f " + _c.DEPENDENCIES_BOOTSTRAP+"/Makefile bootstrap ";
+                "make -f " + _c.DEPENDENCIES_BOOTSTRAP + "/Makefile bootstrap ");
+        return "lessc " + _c.ROOT + "less/style.less >" + _c.ROOT + "public/css/style.css && " +
+                "make -f " + _c.DEPENDENCIES_BOOTSTRAP + "/Makefile bootstrap ";
     }
 }
 

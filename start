@@ -1,0 +1,4 @@
+#!/bin/bash
+jake build
+node bin/start.js 3000
+

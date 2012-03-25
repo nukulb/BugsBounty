@@ -40,12 +40,11 @@ http://dev.mysql.com/downloads/mysql/
     You should be able to see the test data in there.
 
     
-    
-
-
+   
 ##Linux
 coming soon
-
+## To start the server locally
+node bin/start.js:3000
 ##To start server on rackspace
 cd bin
 ./start

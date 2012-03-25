@@ -25,7 +25,7 @@ function _getCmd() {
     } else {
         return "rm -rf " + _c.DEPLOY + " && " + 
                "rm -rf " + _c.TARGET + " && " +
-               "rm -rf " + _c.ROOT + "public/bootstrap && "+
+               "rm -rf " + _c.ROOT + "public/bootstrap && " +
                "mkdir " + _c.TARGET + " && " +
                "mkdir " + _c.DEPLOY;
     }
