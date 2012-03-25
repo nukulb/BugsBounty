@@ -11,7 +11,8 @@ _self = {
             email = require('./lib/email-api'),
             utils = require('./lib/utils'),
             globalTmpl = require('./templates/global'),
-            path = require('path');
+            path = require('path'),
+            auth = require('./lib/auth');
         
         app = express.createServer();
         //setup a static server, make sure configure happens before you call req.body
@@ -32,6 +33,7 @@ _self = {
                 secret: 'Not a secret'
             }));
         });
+        
         function getTmpl(page) {
             var pageTmpl, tmpl, tmplPath;
             tmplPath = './templates/' + page.replace('.html', '.js');
@@ -42,11 +44,12 @@ _self = {
             }
             return utils.mergeTemplateData(globalTmpl, pageTmpl);
         } 
+        
         function requiresLogin(req, res, next) {
             if(req.session.user) {
                 next();
             } else {
-                res.render('login.html', getTmpl('login.html'));
+                res.redirect('/login.html');
             }
 
         }
@@ -60,10 +63,14 @@ _self = {
             next();
         });
        
-        app.get("/feedback", requiresLogin, function (req, res, next) {
-           // var errors = email.feedbackEmail(req, res);
-            res.send("Success"); 
-
+        app.post("/session", function (req, res, next) {
+            auth.sessionAuth(function () {
+                console.log('Authenticated');
+                res.send("Success"); 
+            }, function () {
+                console.log('Auth failed');
+                res.send("Error"); 
+            }, req.param('user'), req.param('password'));
         });
 
         app.post("/lp/user/add", function (req, res, next) {
