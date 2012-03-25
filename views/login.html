@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="login-form">
                         <h2>Login</h2>
-                        <form method='post' action="/session">
+                        <form method='post' action="/session.html">
                             <fieldset>
                                 <div class="clearfix">
                                     <input type="text" name=user placeholder="Username">
@@ -110,7 +110,7 @@ $('form').submit(function() {
             });
 
         //Prevent default form submission
-        return false;
+        return true;
         });
         });
 </script>

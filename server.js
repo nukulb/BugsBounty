@@ -51,9 +51,30 @@ _self = {
             } else {
                 res.redirect('/login.html');
             }
-
         }
-
+        function renderPage(req, res, next) {
+            var page = req.params.page,
+            pageTmpl, tmpl, tmplPath;
+            if (page.substr(0,7) === 'session') {
+                if (!req.session.user) {
+                    res.redirect('login.html');
+                    return;
+                }
+                console.log("logged in as "+ req.session.user.name);
+            }
+            if (page.substr(page.length - 5) === '.html') { 
+                tmplPath = './templates/' + page.replace('.html', '.js');
+                if (path.existsSync(tmplPath)) {
+                    pageTmpl = require(tmplPath);
+                } else {
+                    pageTmpl = {locals: {}, partials: {}};
+                }
+                tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
+                res.render(page, tmpl);
+            } else {
+                next();
+            }
+        }
         app.post("/lpUserAdd.html", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
             if (errors.length) {
@@ -63,13 +84,25 @@ _self = {
             next();
         });
        
-        app.post("/session", function (req, res, next) {
-            auth.sessionAuth(function () {
-                console.log('Authenticated');
-                res.send("Success"); 
+        app.post("/session.html", function (req, res, next) {
+            auth.sessionAuth(function (user) {
+                req.session.user = user;
+                console.log('Authenticated user='+user.name);
+                res.redirect('/session/user.html');
             }, function () {
                 console.log('Auth failed');
-                res.send("Error"); 
+                res.redirect('/login.html');
+            }, req.param('user'), req.param('password'));
+        });
+
+        app.post("/session", function (req, res, next) {
+            auth.sessionAuth(function (user) {
+                req.session.user = user;
+                console.log('Authenticated user='+user.name);
+                res.redirect('/session/user.html');
+            }, function () {
+                console.log('Auth failed');
+                res.redirect('/login.html');
             }, req.param('user'), req.param('password'));
         });
 
@@ -81,49 +114,22 @@ _self = {
             }
             res.send("Success"); 
         });
-
-        app.get("/*:page?", function (req, res, next) {
-            var page = req.params.page,
-                pageTmpl, tmpl, tmplPath;
-            if (page.substr(page.length - 5) === '.html') { 
-                tmplPath = './templates/' + page.replace('.html', '.js');
-                if (path.existsSync(tmplPath)) {
-                    pageTmpl = require(tmplPath);
-                } else {
-                    pageTmpl = {locals: {}, partials: {}};
-                }
-                tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
-                res.render(page, tmpl);
-            } else {
-                next();
-            }
-        });
-        
-        app.get("/", function (req, res, next) {
+        app.get('/login.html', function (req, res, next) {
             var pageTmpl = require('./templates/index.js'),
-                tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
-            res.render('index.html', tmpl);
+            tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
+            res.render('login.html', tmpl);
+        }); 
+        app.get("/*:page?", function (req, res, next) {
+           renderPage(req, res, next); 
         });
-        
+
+
         app.post("/*:page?", function (req, res, next) {
-            var page = req.params.page,
-                pageTmpl, tmpl, tmplPath;
-            if (page.substr(page.length - 5) === '.html') { 
-                tmplPath = './templates/' + page.replace('.html', '.js');
-                if (path.existsSync(tmplPath)) {
-                    pageTmpl = require(tmplPath);
-                } else {
-                    pageTmpl = {locals: {}, partials: {}};
-                }
-                tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
-                res.render(page, tmpl);
-            } else {
-                next();
-            }
+            renderPage(req, res, next); 
         });
 
         app.post("/", function (req, res, next) {
-           // res.send("Error"); 
+            // res.send("Error"); 
         });
 
         app.listen(serverPort);
