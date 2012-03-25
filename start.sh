@@ -1,3 +1,2 @@
 #!/bin/sh
-jake build
-forever start -l forever.log -o out.log -e err.log -a ./bin/start.js 3000
+forever start -l forever.log -o out.log -e err.log ./bin/start.js 3000
