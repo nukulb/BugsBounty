@@ -1,6 +1,5 @@
 .git
 node_modules
-public/js
 dependencies/bootstrap
 public/bootstrap
 public/ext-js
