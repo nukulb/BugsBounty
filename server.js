@@ -16,7 +16,7 @@ _self = {
         app = express.createServer();
         //setup a static server, make sure configure happens before you call req.body
         app.configure(function () {
-            //app.use(express.methodOverride());
+            app.use(express.methodOverride());
             app.use(express.bodyParser());
             app.use(expressValidator);
             app.use(express.static(__dirname + '/public'));
@@ -24,7 +24,32 @@ _self = {
             app.set("view options", { layout: false });
             app.set('views', __dirname + '/views');
             app.register('.html', tmpl); 
+            
+            app.use(express.cookieParser());
+            app.use(express.session({store: require('connect').session.MemoryStore({
+                reapinterval: 600000
+            }),
+                secret: 'Not a secret'
+            }));
         });
+        function getTmpl(page) {
+            var pageTmpl, tmpl, tmplPath;
+            tmplPath = './templates/' + page.replace('.html', '.js');
+            if (path.existsSync(tmplPath)) {
+                pageTmpl = require(tmplPath);
+            } else {
+                pageTmpl = {locals: {}, partials: {}};
+            }
+            return utils.mergeTemplateData(globalTmpl, pageTmpl);
+        } 
+        function requiresLogin(req, res, next) {
+            if(req.session.user) {
+                next();
+            } else {
+                res.render('login.html', getTmpl('login.html'));
+            }
+
+        }
 
         app.post("/lpUserAdd.html", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
@@ -34,13 +59,9 @@ _self = {
             }
             next();
         });
-        
-        app.post("/feedback", function (req, res, next) {
-            var errors = email.feedbackEmail(req, res);
-            if (errors.length) {
-                res.send('There have been validation errors: ' + errors.join(', '), 500);
-                return;
-            }
+       
+        app.get("/feedback", requiresLogin, function (req, res, next) {
+           // var errors = email.feedbackEmail(req, res);
             res.send("Success"); 
 
         });
