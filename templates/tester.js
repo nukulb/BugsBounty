@@ -5,11 +5,11 @@ module.exports  = {
             "set1": [
                 {
                     "heading": "Get free exclusive access",
-                    "text": "You will get early access to the newest apps"
+                    "text": "You will get early access to the newest apps."
                 },
                 {
                     "heading": "Get rewarded",
-                    "text": "Lets face it, you are going to try out new apps, you might as well get rewarded for it."
+                    "text": "Let's face it, you are going to try out new apps. Get rewarded for doing something you enjoy."
                 }
             ],
             "set2": [
