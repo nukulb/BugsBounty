@@ -5,7 +5,7 @@ module.exports  = {
             "set1": [
                 {
                     "heading": "Invite testers",
-                    "text": "We know it's tough to find quality testers, let us find them for you."
+                    "text": "We know it's tough to find quality testers. Let us find them for you."
                 },
                 {
                     "heading": "Set your bounty",
