@@ -122,7 +122,11 @@ _self = {
         app.post("/*:page?", function (req, res, next) {
             renderPage(req, res, next); 
         });
-
+        app.get("/", function (req, res, next) {
+            var pageTmpl = require('./templates/index.js'),
+            tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
+            res.render('index.html', tmpl);
+        });
         app.post("/", function (req, res, next) {
             // res.send("Error"); 
         });
