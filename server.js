@@ -57,7 +57,7 @@ _self = {
             pageTmpl, tmpl, tmplPath;
             if (page.substr(0,7) === 'session') {
                 if (!req.session.user) {
-                    res.redirect('login.html');
+                    res.redirect('/login.html');
                     return;
                 }
                 console.log("logged in as "+ req.session.user.name);
@@ -114,11 +114,6 @@ _self = {
             }
             res.send("Success"); 
         });
-        app.get('/login.html', function (req, res, next) {
-            var pageTmpl = require('./templates/index.js'),
-            tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
-            res.render('login.html', tmpl);
-        }); 
         app.get("/*:page?", function (req, res, next) {
            renderPage(req, res, next); 
         });
