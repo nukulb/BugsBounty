@@ -9,7 +9,7 @@ _self = {
             dataApi = require('./lib/data-api'),
 			tmpl = require('./lib/tmpl'),
             email = require('./lib/email-api'),
-            utils = require('./lib/utils'),
+            Template = require('./lib/template'),
             globalTmpl = require('./templates/global'),
             path = require('path'),
             auth = require('./lib/auth');
@@ -42,7 +42,7 @@ _self = {
             } else {
                 pageTmpl = {locals: {}, partials: {}};
             }
-            return utils.mergeTemplateData(globalTmpl, pageTmpl);
+            return (new Template(globalTmpl)).add(pageTmpl).result;
         } 
         
         function requiresLogin(req, res, next) {
@@ -69,8 +69,8 @@ _self = {
                 } else {
                     pageTmpl = {locals: {}, partials: {}};
                 }
-                tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
-                tmpl = utils.mergeTemplateData(tmpl, {locals: { session: req.session }, partials: {}});
+                tmpl =  (new Template(globalTmpl)).add(pageTmpl)
+                            .add({locals: { session: req.session }, partials: {}}).result;
                 res.render(page, tmpl);
             } else {
                 next();
@@ -125,7 +125,7 @@ _self = {
         });
         app.get("/", function (req, res, next) {
             var pageTmpl = require('./templates/index.js'),
-            tmpl = utils.mergeTemplateData(globalTmpl, pageTmpl);
+            tmpl = (new Template(globalTmpl)).add(pageTmpl).result;
             res.render('index.html', tmpl);
         });
         app.post("/", function (req, res, next) {
