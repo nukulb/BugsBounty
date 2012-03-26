@@ -24,11 +24,11 @@
         });
 
         //Build the signup XHR
-        $('form').submit(function (retry) {
+        $('form').submit(function () {
             var form_data = $(this).serialize();
             _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'submit']);
             $.post('lp/user/add', form_data, function (data) {
-                window.location.replace("http://bugsbounty.com/lpUserAdd.html");
+                document.location.href = "/lpUserAdd.html";
             })
             .error(function () {
                 $("#error").removeClass("hidden");
