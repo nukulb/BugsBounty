@@ -15,13 +15,6 @@
         $(".platform-picker a").removeClass("hidden");
         $(".platform-picker label").addClass("hidden");
 
-        //Show the form when any of the area is clicked
-        $(".hero-btn").click(function (obj) {
-            $(this).children('form').removeClass("hidden");
-            $(this).children('.btn-primary').addClass("hidden");
-            _gaq.push(['_trackEvent', 'Clicks', 'Signup', $(this).children('h1').html()]);
-        });
-
         //When a platform is picked, select it
         $(".button-picker li a").click(function (obj) {
             $(this).toggleClass("selected");
@@ -31,17 +24,18 @@
         });
 
         //Build the signup XHR
-        $('form').submit(function () {
+        $('form').submit(function (retry) {
             var form_data = $(this).serialize();
             _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'submit']);
             $.post('lp/user/add', form_data, function (data) {
-                $('#successModal').modal('show');
+                window.location.replace("http://bugsbounty.com/lpUserAdd.html");
             })
             .error(function () {
-                var mailLink = $('#errorModal > .modal-body a'),
+                $("#error").removeClass("hidden");
+                $('form').html("");
+                var mailLink = $('#error a'),
                 ref = mailLink.attr('href');
                 mailLink.attr('href', ref + '&body=Send me!%0A%0A' + form_data.replace(/&/g, "%0A"));
-                $('#errorModal').modal('show');
             });
 
             //Prevent default form submission
