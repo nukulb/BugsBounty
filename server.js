@@ -95,7 +95,10 @@ _self = {
                 res.redirect('/login.html');
             }, req.param('user'), req.param('password'));
         });
-
+        app.get("/session/destroy", function (req, res, next) {
+            delete req.session.user;
+            res.redirect('/login.html');
+        });
         app.post("/session", function (req, res, next) {
             auth.sessionAuth(function (user) {
                 req.session.user = user;
