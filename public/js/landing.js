@@ -30,7 +30,14 @@
             $.post('lp/user/add', form_data, function (data) {
                 document.location.href = "/lpUserAdd.html";
             })
-            .error(function () {
+            .error(function (error) {
+                
+                if (error.status == 500) {
+                    $("#error500 p").html(error.responseText);
+                    $("#error500").removeClass("hidden");
+                    return;
+                }
+
                 $("#error").removeClass("hidden");
                 $('form').html("");
                 var mailLink = $('#error a'),

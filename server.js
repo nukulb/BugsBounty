@@ -29,7 +29,7 @@ _self = {
         app.post("/lpUserAdd.html", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
             if (errors.length) {
-                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                res.send(errors.join(', '), 500);
                 return;
             }
             next();
@@ -38,7 +38,7 @@ _self = {
         app.post("/feedback", function (req, res, next) {
             var errors = email.feedbackEmail(req, res);
             if (errors.length) {
-                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                res.send(errors.join(', '), 500);
                 return;
             }
             res.send("Success"); 
@@ -48,7 +48,7 @@ _self = {
         app.post("/lp/user/add", function (req, res, next) {
             var errors = dataApi.lpUserAdd(req, res);
             if (errors.length) {
-                res.send('There have been validation errors: ' + errors.join(', '), 500);
+                res.send(errors.join(', '), 500);
                 return;
             }
             res.send("Success"); 
