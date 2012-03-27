@@ -34,11 +34,12 @@
                     <h2>Cross Platform. Community Driven. Reward Based Testing.</h2>
                     <div class="row">
                         <div id="signup" class="offset3 span6 master-mind">
+
                             <form  id="devInfoForm" class="infoForm" method="post" action="lpUserAdd.html">
                                 <input type="hidden" name="developer" value="developer">
                                 <div class="row">
-                                    <input type=name name=name placeholder="Name" required>
-                                    <input type=email name=email placeholder="Email" required>
+                                    <input type=name name=name placeholder="Name" class="required">
+                                    <input type=email name=email placeholder="Email" class="required">
                                 </div>
                                 <div class="row">
                                     <label>Choose your mobile platforms:</label>
@@ -48,12 +49,14 @@
                                     <input type=submit class="btn-primary btn-large" value="Sign up">
                                 </div>
                             </form>
+
                             <div id="error" class="row hidden">
                                 <div class="offset1 span4 master-mind">
-                                <h3>{{{signup.fail.title}}}</h3>
-                                <p>{{{signup.fail.body}}}</p>
-                                <div class="row">
-                                    <a class="btn btn-danger" href="mailto:support@bugsbounty.com?subject=I%20want%20to%20join%20Bugs%20Bounty!">Click Here</a>
+                                    <h3>{{{signup.fail.title}}}</h3>
+                                    <p>{{{signup.fail.body}}}</p>
+                                    <div class="row">
+                                        <a class="btn btn-danger" href="mailto:support@bugsbounty.com?subject=I%20want%20to%20join%20Bugs%20Bounty!">Click Here</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -101,10 +104,10 @@
         <script src="./bootstrap/js/bootstrap.js"></script>
         <script src="./ext-js/jquery.smooth-scroll.js" type="text/javascript"></script>
         <script src="./ext-js/jquery.placeholder.min.js" type="text/javascript"></script>
-
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
         <script src="./js/landing.js" type="text/javascript"></script>
 
-{{> analytics}}
-{{> feedback}}
+        {{> analytics}}
+        {{> feedback}}
 
 </body></html>
