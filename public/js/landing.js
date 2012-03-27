@@ -2,6 +2,8 @@
     var _gaq = _gaq || [];
     $(document).ready(function () {
 
+        $("form").validate();
+
         //Fixing the placeholder text for old browsers
         $('input, textarea').placeholder();
 
@@ -25,19 +27,17 @@
 
         //Build the signup XHR
         $('form').submit(function () {
+
+            if (!$("form").valid()) {
+                return;
+            }
+
             var form_data = $(this).serialize();
             _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'submit']);
             $.post('lp/user/add', form_data, function (data) {
                 document.location.href = "/lpUserAdd.html";
             })
             .error(function (error) {
-                
-                if (error.status == 500) {
-                    $("#error500 p").html(error.responseText);
-                    $("#error500").removeClass("hidden");
-                    return;
-                }
-
                 $("#error").removeClass("hidden");
                 $('form').html("");
                 var mailLink = $('#error a'),
