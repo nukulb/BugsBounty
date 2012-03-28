@@ -10,7 +10,6 @@
             if(!$(obj).hasClass("error")) {
                 $(obj).addClass("error");
                 $(obj).after('<label for="email" generated="true" class="error">Please enter a valid email address.</label>');
-                $(obj).focus();
             }
         } else {
             $(obj).removeClass("error");
@@ -23,10 +22,6 @@
        $(":input").blur(function() {
             $(this).val($.trim($(this).val()));
        });
-
-        $("[type=email]").blur(function() {
-            validateEmail(this);
-        });
 
         //Fixing the placeholder text for old browsers
         $('input, textarea').placeholder();
@@ -54,6 +49,7 @@
         $('form').submit(function () {
             if(!validEmail($("[type=email]").val())) {
                 validateEmail("[type=email]");
+                $("[type=email]").focus();
                 return false;
             }
 
