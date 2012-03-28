@@ -1,8 +1,32 @@
 (function () {
     var _gaq = _gaq || [];
+    function validEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    function validateEmail(obj){
+        if(!validEmail($(obj).val())) {
+            if(!$(obj).hasClass("error")) {
+                $(obj).addClass("error");
+                $(obj).after('<label for="email" generated="true" class="error">Please enter a valid email address.</label>');
+                $(obj).focus();
+            }
+        } else {
+            $(obj).removeClass("error");
+            $('[for="email"]').remove();
+        }
+    }
+
     $(document).ready(function () {
 
-        $("form").validate();
+       $(":input").blur(function() {
+            $(this).val($.trim($(this).val()));
+       });
+
+        $("[type=email]").blur(function() {
+            validateEmail(this);
+        });
 
         //Fixing the placeholder text for old browsers
         $('input, textarea').placeholder();
@@ -25,11 +49,12 @@
             $checkbox.attr('checked', !$checkbox.attr('checked'));
         });
 
+
         //Build the signup XHR
         $('form').submit(function () {
-
-            if (!$("form").valid()) {
-                return;
+            if(!validEmail($("[type=email]").val())) {
+                validateEmail("[type=email]");
+                return false;
             }
 
             var form_data = $(this).serialize();
@@ -49,4 +74,4 @@
             return false;
         });
     });
-}()); 
+}());
