@@ -7,7 +7,7 @@ module.exports  = {
                 body: "We'll send you an invite as soon as we can. In the meantime, check out our <a href='http://blog.bugsbounty.com'>blog</a>."
             },
             fail: {
-                title: ">Oh no :(",
+                title: "Oh no :(",
                 body: "Something went wrong but that shouldn't stop you from joining Bugs Bounty."
             }
         },
