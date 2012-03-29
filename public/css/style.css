@@ -126,6 +126,16 @@ textarea {
   font-size: 20px;
   font-weight: bold;
 }
+.master-mind label.error {
+  color: #B94A48;
+  font-size: 1em;
+}
+.master-mind input.error {
+  border: 1px solid #B94A48;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
 .master-mind ol {
   list-style-type: none;
 }
