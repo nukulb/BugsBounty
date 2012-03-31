@@ -1,13 +1,13 @@
 (function () {
     var _gaq = _gaq || [];
     function validEmail(email) {
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
 
-    function validateEmail(obj){
-        if(!validEmail($(obj).val())) {
-            if(!$(obj).hasClass("error")) {
+    function validateEmail(obj) {
+        if (!validEmail($(obj).val())) {
+            if (!$(obj).hasClass("error")) {
                 $(obj).addClass("error");
                 $(obj).after('<label for="email" generated="true" class="error">Please enter a valid email address.</label>');
             }
@@ -19,9 +19,9 @@
 
     $(document).ready(function () {
 
-       $(":input").blur(function() {
+        $(":input").blur(function () {
             $(this).val($.trim($(this).val()));
-       });
+        });
 
         //Fixing the placeholder text for old browsers
         $('input, textarea').placeholder();
@@ -47,7 +47,7 @@
 
         //Build the signup XHR
         $('form').submit(function () {
-            if(!validEmail($("[type=email]").val())) {
+            if (!validEmail($("[type=email]").val())) {
                 validateEmail("[type=email]");
                 $("[type=email]").focus();
                 return false;
@@ -55,7 +55,7 @@
 
             var form_data = $(this).serialize();
             _gaq.push(['_trackEvent', 'Clicks', 'Signup', 'submit']);
-            $.post('lp/user/add', form_data, function (data) {
+            $.post('/lpUserAdd.html', form_data, function (data) {
                 document.location.href = "/lpUserAdd.html";
             })
             .error(function (error) {

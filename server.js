@@ -27,12 +27,14 @@ _self = {
         });
 
         app.post("/lpUserAdd.html", function (req, res, next) {
-            var errors = dataApi.lpUserAdd(req, res);
-            if (errors.length) {
-                res.send(errors.join(', '), 500);
-                return;
-            }
-            next();
+            dataApi.lpUserAdd(req, res, function (errors) {
+                console.log(errors);
+                if (errors.length) {
+                    res.send(errors.join(', '), 500);
+                    return;
+                }
+                next();
+            });
         });
         
         app.post("/feedback", function (req, res, next) {
@@ -43,15 +45,6 @@ _self = {
             }
             res.send("Success"); 
 
-        });
-
-        app.post("/lp/user/add", function (req, res, next) {
-            var errors = dataApi.lpUserAdd(req, res);
-            if (errors.length) {
-                res.send(errors.join(', '), 500);
-                return;
-            }
-            res.send("Success"); 
         });
 
         app.get("/*:page?", function (req, res, next) {
