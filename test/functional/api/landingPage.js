@@ -2,10 +2,18 @@ describe("Server", function () {
 
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
         database = require('./../../../lib/database'),
-        server = require('./../../../server');
+        server = require('./../../../server'),
+        client;
     
     beforeEach(function () {
-        spyOn(database, "query");
+        client = {
+            query: jasmine.createSpy().andCallFake(function (obj, params, cb) {
+                if (cb)
+                    cb();
+            }),
+            end: jasmine.createSpy()
+        };
+        spyOn(database, "create").andReturn(client);
         spyOn(console, "log");
         server.start(3000);
     });
@@ -26,8 +34,9 @@ describe("Server", function () {
         waits(250); 
         
         runs(function () {
-            //expect(xhr.responseText).toEqual('Success');
-            expect(database.query).toHaveBeenCalled();
+            expect(database.create).toHaveBeenCalled();
+            expect(client.query).toHaveBeenCalled();
+            expect(client.end).toHaveBeenCalled();
         });
     });
     
