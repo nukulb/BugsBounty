@@ -15,6 +15,11 @@ body {
   padding-bottom: 40px;
   color: #777;
   padding-top: 60px;
+  background: #89cede;
+  background-image: url("/img/noise.png"), -webkit-gradient(linear, left bottom, left top, color-stop(0%, #89cede), color-stop(100%, #89cede));
+  background-image: url("/img/noise.png"), -o-linear-gradient(#89cede, #89cede);
+  background-image: url("/img/noise.png"), -moz-linear-gradient(center bottom, #89cede 0%, #89cede 100%);
+  background-image: url("/img/noise.png"), -ms-linear-gradient(bottom, #89cede, #89cede);
 }
 input,
 textarea {
