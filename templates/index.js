@@ -18,6 +18,10 @@ module.exports  = {
             ],
             "set2": [
                 {
+                    "heading": "See what is working",
+                    "text": "Get real-time A/B test results"
+                },
+                {
                     "heading": "Get top quality feedback",
                     "text": "Receive responses from the community on any aspect of your app."
                 },
