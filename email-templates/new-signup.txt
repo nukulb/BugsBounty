@@ -1,9 +1,7 @@
 <html>
 <body>
 Hello Team,
-<br/><br/>
         Congratulations, there is a new signup. {{name}} signed up with {{email}} email address as a {{role}}.
-<br/></br>
 
 --Node mailer says Hi
 
