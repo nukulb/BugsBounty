@@ -1,5 +1,6 @@
-Run ./configure 
+Run ./configure
 or if you know what you are doing you can just run "npm install". ./configure is necessary the first time.
+
 
 ##Setting up the database MySQL
 This is done to determine if you are running node in production or development environment.
@@ -36,11 +37,11 @@ http://dev.mysql.com/downloads/mysql/
     USE DEV_DATA;
     SHOW TABLES;
     SELECT * FROM testers;
-  
+
     You should be able to see the test data in there.
 
-    
-   
+
+
 ##Linux
 coming soon
 ## To start the server locally
