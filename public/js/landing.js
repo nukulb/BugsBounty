@@ -40,8 +40,9 @@
         $(".button-picker li a").click(function (obj) {
             $(this).toggleClass("selected");
             //Select the appropriate checkbox
-            var $checkbox = $(this).parent().find(':checkbox');
-            $checkbox.attr('checked', !$checkbox.attr('checked'));
+            var checkbox = $(this).parent().find(':checkbox');
+            checkbox.attr('checked', !checkbox.attr('checked'));
+            _gaq.push(['_trackEvent', 'Clicks', 'Platform', $(this).attr("href").slice(1)]);
         });
 
 

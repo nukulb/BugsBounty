@@ -10,7 +10,13 @@
 
     More info at: http://lesselements.com
 -----------------------------------------------------*/
-
+.texturedBG(@url, @color) {
+  background: @color;
+  background-image: url(@url), -webkit-gradient(linear, left bottom, left top, color-stop(0%, @color), color-stop(100%, @color));
+  background-image: url(@url), -o-linear-gradient(@color, @color);
+  background-image: url(@url), -moz-linear-gradient(center bottom, @color 0%, @color 100%);
+  background-image: url(@url), -ms-linear-gradient(bottom, @color, @color);
+}
 .gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
   background: @color;
   background: -webkit-gradient(linear,
